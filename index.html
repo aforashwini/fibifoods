@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibi Foods — The Fiber Bar You'll Actually Crave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5"/>
+          <text x="20" y="26" text-anchor="middle" font-size="16" font-weight="800" fill="currentColor" font-family="'Playfair Display', serif">F</text>
+        </svg>
+        <span>fibi</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#compare">Why Fibi</a></li>
+        <li><a href="#waitlist" class="btn btn-nav">Join Waitlist</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-texture"></div>
+    <div class="container hero-container">
+      <div class="hero-badge">
+        <svg viewBox="0 0 200 200" class="badge-svg">
+          <defs>
+            <path id="circlePath" d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"/>
+          </defs>
+          <text font-size="13" font-weight="600" letter-spacing="4" fill="#3D6B4F">
+            <textPath href="#circlePath" startOffset="0%">FIBER • NUTRITION • WHOLE FOOD • NATURAL •</textPath>
+          </text>
+        </svg>
+        <div class="badge-center">
+          <span class="badge-number">10g</span>
+          <span class="badge-label">fiber</span>
+        </div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-tag">Introducing</p>
+        <h1 class="hero-title">Meet <span class="text-pink">Fibi.</span></h1>
+        <h2 class="hero-subtitle">The Daily Habit You'll Actually Crave.</h2>
+        <p class="hero-description">
+          Fibi isn't a supplement — it's food. We've ditched the gummy texture and the fruit-leather feel
+          for a bar that eats like a treat but works like a powerhouse.
+        </p>
+        <a href="#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="about">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-stamp">
+            <div class="stamp-border">
+              <span class="stamp-number">10g</span>
+              <span class="stamp-text">FIBER</span>
+            </div>
+          </div>
+          <h3>10g of Fiber Per Bar</h3>
+          <p>That's roughly <strong>33% of what you need</strong> for the entire day. Eat one bar, and you're ahead of the curve.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-stamp">
+            <div class="stamp-border">
+              <span class="stamp-icon">&#9752;</span>
+              <span class="stamp-text">WHOLE</span>
+            </div>
+          </div>
+          <h3>Whole Food Ingredients</h3>
+          <p>Crafted from <strong>oats, dates, nuts, and fruit.</strong> Nothing synthetic. Nothing you can't pronounce.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-stamp">
+            <div class="stamp-border">
+              <span class="stamp-icon">&#10035;</span>
+              <span class="stamp-text">TASTE</span>
+            </div>
+          </div>
+          <h3>Nutty & Chocolatey</h3>
+          <p>We aim for <strong>"satisfying snack,"</strong> not "chewy fruit snack." Think indulgent, not medicinal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Backstory Section -->
+  <section class="backstory" id="story">
+    <div class="container backstory-container">
+      <div class="backstory-visual">
+        <div class="backstory-stamp-large">
+          <svg viewBox="0 0 300 300" class="stamp-svg">
+            <circle cx="150" cy="150" r="140" fill="none" stroke="#E8627C" stroke-width="2" stroke-dasharray="6 4"/>
+            <circle cx="150" cy="150" r="125" fill="none" stroke="#E8627C" stroke-width="1.5"/>
+            <text x="150" y="135" text-anchor="middle" font-size="22" font-weight="700" fill="#E8627C" font-family="'Playfair Display', serif">MOM-TESTED</text>
+            <text x="150" y="165" text-anchor="middle" font-size="18" font-weight="600" fill="#3D6B4F" font-family="'Inter', sans-serif">FOUNDER</text>
+            <text x="150" y="190" text-anchor="middle" font-size="18" font-weight="600" fill="#3D6B4F" font-family="'Inter', sans-serif">OBSESSED</text>
+            <line x1="80" y1="200" x2="220" y2="200" stroke="#E8627C" stroke-width="1"/>
+            <text x="150" y="225" text-anchor="middle" font-size="12" letter-spacing="3" fill="#3D6B4F" font-family="'Inter', sans-serif">EST. 2024</text>
+          </svg>
+        </div>
+      </div>
+      <div class="backstory-content">
+        <p class="section-tag">The Backstory</p>
+        <h2 class="section-title">Mom-Tested,<br><span class="text-pink">Founder-Obsessed.</span></h2>
+        <p>
+          Fibi was born out of frustration. As a health-obsessed vegan who tracks fiber like
+          others track protein, our founder couldn't find a convenient fiber source that didn't
+          taste medicinal.
+        </p>
+        <p>
+          So, we called in the expert. Fibi bars were co-developed with a <strong>recipe developer
+          and food blogger with 25+ years of culinary experience</strong> (and a reputation for
+          legendary healthy cooking in Bangalore).
+        </p>
+        <p class="backstory-highlight">
+          The result? A recipe that balances high-impact nutrition with culinary-grade flavor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section class="comparison" id="compare">
+    <div class="container">
+      <p class="section-tag section-tag-center">The Difference</p>
+      <h2 class="section-title section-title-center">Not All Fiber is <span class="text-pink">Created Equal</span></h2>
+
+      <div class="comparison-grid">
+        <div class="comparison-col comparison-old">
+          <div class="comparison-header">
+            <span class="comparison-icon">&#10007;</span>
+            <h3>The Old Way</h3>
+          </div>
+          <div class="comparison-items">
+            <div class="comparison-item">
+              <h4>Fiber Powders</h4>
+              <p>Gritty, medicinal, and chemically isolated.</p>
+            </div>
+            <div class="comparison-item">
+              <h4>"Fiber" Snacks</h4>
+              <p>Loaded with artificial sugars and syrups (looking at you, Fiber One).</p>
+            </div>
+            <div class="comparison-item">
+              <h4>Fruit Bars</h4>
+              <p>Sticky, chewy, and lacking crunch.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-divider">
+          <span>VS</span>
+        </div>
+
+        <div class="comparison-col comparison-new">
+          <div class="comparison-header">
+            <span class="comparison-icon">&#10003;</span>
+            <h3>The Fibi Way</h3>
+          </div>
+          <div class="comparison-items">
+            <div class="comparison-item">
+              <h4>Fibi Bars</h4>
+              <p>Delicious, whole-food texture using oats and nuts.</p>
+            </div>
+            <div class="comparison-item">
+              <h4>Fibi Bars</h4>
+              <p>Sweetened naturally with dates and fruit. Clean label.</p>
+            </div>
+            <div class="comparison-item">
+              <h4>Fibi Bars</h4>
+              <p>A satisfying, nutty, chocolatey experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Waitlist Section -->
+  <section class="cta" id="waitlist">
+    <div class="cta-texture"></div>
+    <div class="container cta-container">
+      <div class="cta-stamp">
+        <svg viewBox="0 0 120 120" class="cta-stamp-svg">
+          <circle cx="60" cy="60" r="55" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 3"/>
+          <circle cx="60" cy="60" r="45" fill="none" stroke="#fff" stroke-width="1"/>
+          <text x="60" y="55" text-anchor="middle" font-size="10" letter-spacing="2" fill="#fff" font-family="'Inter', sans-serif">FIBER</text>
+          <text x="60" y="72" text-anchor="middle" font-size="10" letter-spacing="2" fill="#fff" font-family="'Inter', sans-serif">FIRST</text>
+        </svg>
+      </div>
+      <h2 class="cta-title">Your Gut (And Your Tastebuds) Will <span class="text-cream">Thank You.</span></h2>
+      <p class="cta-description">Join the movement to make fiber a delicious part of your daily ritual.</p>
+      <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+        <div class="form-group">
+          <input type="email" placeholder="Enter your email" required class="form-input" id="waitlist-email">
+          <button type="submit" class="btn btn-cta">Join the Waitlist</button>
+        </div>
+        <p class="form-note">Be the first to know when Fibi launches. No spam, ever.</p>
+      </form>
+      <div id="waitlist-success" class="waitlist-success" style="display:none;">
+        <p>You're on the list! We'll be in touch soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo footer-logo">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5"/>
+            <text x="20" y="26" text-anchor="middle" font-size="16" font-weight="800" fill="currentColor" font-family="'Playfair Display', serif">F</text>
+          </svg>
+          <span>fibi</span>
+        </a>
+        <p class="footer-tagline">Making fiber the best part of your day.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#story">Our Story</a>
+        <a href="#compare">Why Fibi</a>
+        <a href="#waitlist">Join Waitlist</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Fibi Foods. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

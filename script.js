@@ -32,8 +32,8 @@ function handleWaitlist(e) {
 
 // Scroll-triggered animations using IntersectionObserver
 const observerOptions = {
-  threshold: 0.15,
-  rootMargin: '0px 0px -40px 0px'
+  threshold: 0.1,
+  rootMargin: '0px 0px -30px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -48,13 +48,13 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for scroll animation
 document.addEventListener('DOMContentLoaded', () => {
   const animateElements = document.querySelectorAll(
-    '.feature-card, .backstory-content, .backstory-visual, .comparison-col, .comparison-divider'
+    '.bar-card, .ingredient-card, .about-content, .about-visual, .story-step, .comparison-col, .comparison-divider, .ingredients-callout, .hero-stats, .section-header'
   );
 
   animateElements.forEach((el, i) => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = `opacity 0.7s ease ${(i % 6) * 0.08}s, transform 0.7s ease ${(i % 6) * 0.08}s`;
     observer.observe(el);
   });
 });
@@ -70,16 +70,23 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Navbar background on scroll
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   const currentScroll = window.pageYOffset;
 
   if (currentScroll > 50) {
-    navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+    navbar.style.boxShadow = '0 4px 24px rgba(0,0,0,0.2)';
+    navbar.style.background = 'rgba(26, 51, 36, 0.95)';
   } else {
     navbar.style.boxShadow = 'none';
+    navbar.style.background = 'rgba(30, 61, 42, 0.9)';
   }
+});
 
-  lastScroll = currentScroll;
+// Randomize food illustration float animations
+document.querySelectorAll('.food-item').forEach(item => {
+  const duration = 15 + Math.random() * 15;
+  const delay = -Math.random() * 20;
+  item.style.animationDuration = duration + 's';
+  item.style.animationDelay = delay + 's';
 });

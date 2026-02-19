@@ -118,7 +118,66 @@
 
             {/* ========== END PHASE 2 ========== */}
 
-            {/* Phase 3 will go here */}
+            {/* ========== PHASE 3: WHY FIBI & FOOTER ========== */}
+
+            {/* Why Fibi? Section */}
+            <section id="about" className="px-6">
+              <h2 className="font-marker text-fibi-blue text-5xl mt-12 mb-6">
+                Why Fibi?
+              </h2>
+
+              {/* 2x2 Feature Grid */}
+              <div className="grid grid-cols-2 gap-5">
+                {/* Peanut SVG icon component — yellow, tilted 45deg */}
+                {[
+                  'High Fiber',
+                  'Delicious',
+                  'Plant-Based',
+                  'No Weird Ingredients',
+                ].map((item) => (
+                  <div key={item} className="flex flex-row items-center gap-3">
+                    {/* Peanut icon */}
+                    <svg width="36" height="36" viewBox="0 0 60 60" className="shrink-0" style={{transform: 'rotate(45deg)'}}>
+                      <path
+                        d="M18 30 C18 18 22 10 30 10 C34 10 36 14 37 18 C38 14 40 10 44 10 C52 10 56 18 56 30 C56 42 52 50 44 50 C40 50 38 46 37 42 C36 46 34 50 30 50 C22 50 18 42 18 30Z"
+                        fill="#FDF485"
+                      />
+                    </svg>
+                    <span className="font-hand text-fibi-nav text-2xl sm:text-3xl">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Footer */}
+            <footer id="contact" className="relative px-6 mt-16 pb-10">
+              {/* Subtle divider */}
+              <div className="border-t border-white/20 mb-8"></div>
+
+              {/* Brand */}
+              <p className="font-marker text-fibi-blue text-2xl text-center mb-2">
+                Fibi Foods
+              </p>
+
+              {/* Copyright */}
+              <p className="font-hand text-fibi-yellow text-sm text-center">
+                &copy; 2024 Fibi Foods. All rights reserved.
+              </p>
+
+              {/* Sparkle star — bottom right */}
+              <svg
+                className="absolute bottom-4 right-4 w-10 h-10 opacity-40"
+                viewBox="0 0 40 40"
+                fill="none"
+              >
+                <path
+                  d="M20 0 L23 15 L40 20 L23 25 L20 40 L17 25 L0 20 L17 15 Z"
+                  fill="white"
+                />
+              </svg>
+            </footer>
+
+            {/* ========== END PHASE 3 ========== */}
 
           </div>
         </div>

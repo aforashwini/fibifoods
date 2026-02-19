@@ -49,10 +49,76 @@
       return (
         // Full viewport green background
         <div className="min-h-screen bg-fibi-green">
-          {/* Centered mobile-poster container — content lives here */}
-          <div className="max-w-lg mx-auto relative px-6">
+          {/* Centered mobile-poster container */}
+          <div className="max-w-lg mx-auto relative">
 
-            {/* Phase 1 complete — scaffold ready for Phase 2 & 3 */}
+            {/* ========== PHASE 2: HEADER & HERO ========== */}
+
+            {/* Navigation */}
+            <nav className="flex justify-between items-center p-6">
+              {/* Logo — 'f' drops lower via inline style */}
+              <a href="#" className="font-marker text-3xl text-fibi-blue">
+                <span style={{position:'relative', top:'3px'}}>f</span>ibifoods
+              </a>
+              {/* Nav links */}
+              <div className="flex space-x-4">
+                <a href="#" className="font-hand text-xl text-fibi-nav hover:opacity-80">Home</a>
+                <a href="#about" className="font-hand text-xl text-fibi-nav hover:opacity-80">About</a>
+                <a href="#shop" className="font-hand text-xl text-fibi-nav hover:opacity-80">Shop</a>
+                <a href="#contact" className="font-hand text-xl text-fibi-nav hover:opacity-80">Contact</a>
+              </div>
+            </nav>
+
+            {/* Hero Section */}
+            <section className="relative px-6 pt-8 pb-16 overflow-visible">
+
+              {/* Yellow blob — absolute, behind everything */}
+              <div className="absolute -top-10 -left-8 -right-8 bottom-0 z-0 pointer-events-none">
+                <svg viewBox="0 0 500 450" className="w-full h-full" preserveAspectRatio="none">
+                  <path
+                    d="M60 80 C20 120 -10 200 30 280 C50 320 80 370 150 400 C220 430 300 420 370 380 C430 345 480 280 470 210 C460 140 420 90 370 60 C310 25 230 10 170 20 C120 28 90 50 60 80Z"
+                    fill="#FDF485"
+                  />
+                </svg>
+              </div>
+
+              {/* Hero content — sits above blob */}
+              <div className="relative z-10">
+                {/* Main Headline */}
+                <h1 className="font-marker text-fibi-blue text-5xl sm:text-6xl leading-tight mb-5 text-left">
+                  Fibi Foods:<br/>Real Ingredients,<br/>Real Fiber.
+                </h1>
+
+                {/* Sub-headline */}
+                <p className="font-hand text-fibi-yellow text-2xl mb-8 text-left">
+                  Fiber bars that actually taste good.<br/>No fake stuff. Just plants.
+                </p>
+
+                {/* CTA Button — hand-drawn feel, slight rotation */}
+                <a
+                  href="#shop"
+                  className="inline-block font-hand text-xl text-fibi-blue bg-fibi-yellow px-8 py-3 rounded-tl-lg rounded-br-2xl rounded-tr-md rounded-bl-md shadow-md hover:shadow-lg transition-all"
+                  style={{transform: 'rotate(-2deg)'}}
+                >
+                  Shop Now
+                </a>
+              </div>
+
+              {/* Product image — photorealistic bar, overlapping blob */}
+              <div className="absolute -right-4 top-6 z-20 w-56 sm:w-64">
+                <img
+                  src="Gemini_Generated_Image_xlavofxlavofxlav.png"
+                  alt="Fibi Bar — a fiber-rich granola bar in a lavender wrapper with chocolate dripping"
+                  className="w-full h-auto drop-shadow-2xl"
+                  style={{transform: 'rotate(-15deg)'}}
+                />
+              </div>
+
+            </section>
+
+            {/* ========== END PHASE 2 ========== */}
+
+            {/* Phase 3 will go here */}
 
           </div>
         </div>

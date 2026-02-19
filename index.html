@@ -6,7 +6,7 @@
   <title>Fibi Foods — Real Ingredients, Real Fiber</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,38 +34,73 @@
     <div class="container hero-container">
       <div class="hero-content">
         <h1 class="hero-title">Fibi Foods:<br>Real Ingredients,<br>Real Fiber.</h1>
-        <p class="hero-description">Fiber bars that actually taste good. No fake stuff. Just plants.</p>
-        <a href="#shop" class="btn btn-primary">Shop Now</a>
+        <p class="hero-description">Fiber bars that actually taste good.<br>No fake stuff. Just plants.</p>
+        <a href="#shop" class="btn btn-primary" id="shop">Shop Now</a>
       </div>
       <div class="hero-visual">
-        <!-- Yellow organic blob shapes behind the bar -->
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-        <!-- Chocolate drips from top -->
-        <svg class="chocolate-drips" viewBox="0 0 300 80" aria-hidden="true">
-          <path d="M0 0 L300 0 L300 20 Q280 20 275 35 Q272 50 270 20 L260 20 Q255 25 252 20 L220 20 Q215 30 212 45 Q210 55 208 20 L180 20 Q175 25 172 20 L140 20 Q135 35 132 55 Q130 65 128 20 L100 20 Q95 25 92 20 L70 20 Q65 40 62 55 Q60 60 58 20 L30 20 Q25 25 22 20 L0 20 Z" fill="#5C3D2E"/>
+        <!-- Yellow paint splatter shapes -->
+        <svg class="splatter splatter-1" viewBox="0 0 200 200" aria-hidden="true">
+          <path d="M100 10 C140 5 185 30 190 70 C195 110 175 145 150 170 C125 195 80 200 50 180 C20 160 0 125 5 85 C10 45 60 15 100 10Z" fill="#E2D44E"/>
+          <circle cx="175" cy="40" r="12" fill="#E2D44E"/>
+          <circle cx="25" cy="160" r="10" fill="#E2D44E"/>
+          <circle cx="190" cy="130" r="8" fill="#E2D44E"/>
+          <ellipse cx="40" cy="30" rx="14" ry="8" fill="#E2D44E" transform="rotate(-30 40 30)"/>
         </svg>
-        <!-- Fiber bar illustration -->
+        <svg class="splatter splatter-2" viewBox="0 0 160 160" aria-hidden="true">
+          <path d="M80 5 C120 0 155 25 158 65 C161 105 140 135 110 150 C80 165 40 155 20 130 C0 105 5 60 25 35 C45 10 50 8 80 5Z" fill="#D6C83A"/>
+          <circle cx="145" cy="30" r="9" fill="#D6C83A"/>
+          <circle cx="10" cy="120" r="7" fill="#D6C83A"/>
+        </svg>
+        <svg class="splatter splatter-3" viewBox="0 0 120 120" aria-hidden="true">
+          <path d="M60 5 C90 0 115 20 118 50 C121 80 105 105 80 115 C55 125 25 115 10 90 C-5 65 5 25 30 12 C45 4 40 6 60 5Z" fill="#E8DC55"/>
+          <circle cx="110" cy="25" r="7" fill="#E8DC55"/>
+        </svg>
+
+        <!-- Chocolate drips from top -->
+        <svg class="chocolate-drips" viewBox="0 0 260 100" aria-hidden="true">
+          <path d="M0 0 L260 0 L260 15 Q250 15 247 25 Q244 40 242 50 Q240 58 238 15 L210 15 Q207 20 205 15 L175 15 Q172 28 170 42 Q168 55 166 65 Q164 70 162 15 L130 15 Q127 22 125 15 L95 15 Q92 30 90 48 Q88 60 86 70 Q84 75 82 15 L55 15 Q52 20 50 15 L25 15 Q22 25 20 38 Q18 48 16 15 L0 15 Z" fill="#5C3D2E"/>
+        </svg>
+
+        <!-- Granola crumbles -->
+        <svg class="crumbles" viewBox="0 0 280 60" aria-hidden="true">
+          <ellipse cx="60" cy="15" rx="6" ry="4" fill="#A07840" transform="rotate(20 60 15)"/>
+          <ellipse cx="90" cy="8" rx="4" ry="3" fill="#C49A5C" transform="rotate(-15 90 8)"/>
+          <ellipse cx="140" cy="12" rx="5" ry="3" fill="#8B6530" transform="rotate(35 140 12)"/>
+          <ellipse cx="175" cy="6" rx="3" ry="2" fill="#D4B07A"/>
+          <ellipse cx="200" cy="14" rx="5" ry="4" fill="#A07840" transform="rotate(-25 200 14)"/>
+          <ellipse cx="110" cy="5" rx="3" ry="2" fill="#B8904A" transform="rotate(10 110 5)"/>
+          <ellipse cx="230" cy="10" rx="4" ry="3" fill="#C49A5C" transform="rotate(45 230 10)"/>
+          <circle cx="50" cy="20" r="2.5" fill="#8B6530"/>
+          <circle cx="160" cy="18" r="2" fill="#D4B07A"/>
+          <circle cx="220" cy="20" r="3" fill="#A07840"/>
+          <ellipse cx="75" cy="22" rx="4" ry="2" fill="#C49A5C" transform="rotate(-40 75 22)"/>
+        </svg>
+
+        <!-- Fiber bar illustration — tilted -->
         <div class="bar-wrapper">
-          <svg class="bar-illustration" viewBox="0 0 240 120" aria-hidden="true">
-            <!-- Bar wrapper -->
-            <rect x="10" y="15" width="220" height="90" rx="12" fill="#7B5EA7"/>
-            <rect x="10" y="15" width="220" height="90" rx="12" fill="url(#wrapperGrad)" opacity="0.3"/>
-            <!-- Wrapper edge fold -->
-            <path d="M10 30 Q15 15 30 15 L210 15 Q225 15 230 30" fill="#6B4E97" opacity="0.5"/>
+          <svg class="bar-illustration" viewBox="0 0 260 130" aria-hidden="true">
+            <!-- Bar wrapper background -->
+            <rect x="10" y="15" width="240" height="100" rx="14" fill="#7B5EA7"/>
+            <!-- Subtle wrapper sheen -->
+            <rect x="10" y="15" width="240" height="50" rx="14" fill="rgba(255,255,255,0.08)"/>
+            <!-- Wrapper crinkle lines -->
+            <line x1="15" y1="40" x2="15" y2="90" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="245" y1="40" x2="245" y2="90" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- Left fold -->
+            <path d="M10 35 C12 20 20 15 30 15 L30 115 C20 115 12 110 10 95Z" fill="#6A4F94" opacity="0.6"/>
+            <!-- Right fold -->
+            <path d="M250 35 C248 20 240 15 230 15 L230 115 C240 115 248 110 250 95Z" fill="#6A4F94" opacity="0.6"/>
             <!-- Label area -->
-            <rect x="30" y="35" width="180" height="50" rx="8" fill="rgba(255,255,255,0.15)"/>
-            <!-- Brand text on bar -->
-            <text x="120" y="58" text-anchor="middle" font-family="'Caveat', cursive" font-size="22" font-weight="700" fill="#FFF">fibi bar</text>
+            <rect x="40" y="30" width="180" height="70" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <!-- Brand text -->
+            <text x="130" y="62" text-anchor="middle" font-family="'Caveat', cursive" font-size="28" font-weight="700" fill="#FFFFFF">fibi bar</text>
             <!-- Subtext -->
-            <text x="120" y="76" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="rgba(255,255,255,0.7)" letter-spacing="2">HIGH FIBER</text>
-            <defs>
-              <linearGradient id="wrapperGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#FFF" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="#000" stop-opacity="0.1"/>
-              </linearGradient>
-            </defs>
+            <text x="130" y="84" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.6)" letter-spacing="3">HIGH FIBER</text>
+            <!-- Decorative dots on wrapper -->
+            <circle cx="55" cy="100" r="2" fill="rgba(255,255,255,0.1)"/>
+            <circle cx="70" cy="103" r="1.5" fill="rgba(255,255,255,0.08)"/>
+            <circle cx="190" cy="100" r="2" fill="rgba(255,255,255,0.1)"/>
+            <circle cx="205" cy="103" r="1.5" fill="rgba(255,255,255,0.08)"/>
           </svg>
         </div>
       </div>
@@ -76,24 +111,24 @@
   <section class="why-section" id="about">
     <div class="container">
       <h2 class="section-title">Why Fibi?</h2>
-      <ul class="benefits-list">
-        <li>
+      <div class="benefits-grid">
+        <div class="benefit-item">
           <span class="check-icon">&#10003;</span>
           <span>High Fiber</span>
-        </li>
-        <li>
+        </div>
+        <div class="benefit-item">
           <span class="check-icon">&#10003;</span>
           <span>Delicious</span>
-        </li>
-        <li>
+        </div>
+        <div class="benefit-item">
           <span class="check-icon">&#10003;</span>
           <span>Plant-Based</span>
-        </li>
-        <li>
+        </div>
+        <div class="benefit-item">
           <span class="check-icon">&#10003;</span>
           <span>No Weird Ingredients</span>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </section>
 

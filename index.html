@@ -3,57 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fibi Foods — The Fiber Bar You'll Actually Crave</title>
+  <title>Fibi Foods — Real Ingredients, Real Fiber</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Scalloped Page Border -->
-  <div class="page-border"></div>
-
-  <!-- Floating Food Illustrations (SVG scattered background elements) -->
-  <div class="food-illustrations" aria-hidden="true">
-    <svg class="food-item food-banana" viewBox="0 0 80 80"><path d="M20 55 C15 40 25 15 50 12 C55 11 58 14 55 18 C40 22 30 40 28 55 C27 60 22 60 20 55Z" fill="#F7D44C" stroke="#5A4A1E" stroke-width="1.5"/></svg>
-    <svg class="food-item food-strawberry" viewBox="0 0 80 80"><path d="M40 15 C30 15 18 30 18 48 C18 62 28 68 40 68 C52 68 62 62 62 48 C62 30 50 15 40 15Z" fill="#E8627C" stroke="#8B2040" stroke-width="1.5"/><circle cx="32" cy="40" r="1.5" fill="#FDF6EC"/><circle cx="40" cy="45" r="1.5" fill="#FDF6EC"/><circle cx="48" cy="40" r="1.5" fill="#FDF6EC"/><circle cx="36" cy="52" r="1.5" fill="#FDF6EC"/><circle cx="44" cy="52" r="1.5" fill="#FDF6EC"/><path d="M35 15 L40 8 L45 15" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1"/></svg>
-    <svg class="food-item food-apple" viewBox="0 0 80 80"><path d="M40 18 C28 18 16 30 16 48 C16 62 26 70 40 70 C54 70 64 62 64 48 C64 30 52 18 40 18Z" fill="#E85050" stroke="#8B2020" stroke-width="1.5"/><path d="M40 18 C40 10 48 6 52 8" fill="none" stroke="#4A8A5F" stroke-width="2"/><ellipse cx="42" cy="12" rx="6" ry="4" fill="#4A8A5F" transform="rotate(-20 42 12)"/></svg>
-    <svg class="food-item food-carrot" viewBox="0 0 80 80"><path d="M35 20 L28 65 C28 68 32 70 35 68 L42 65 L35 20Z" fill="#F5923E" stroke="#8B4513" stroke-width="1.5"/><path d="M32 20 C28 12 35 8 38 14 C42 8 48 12 44 20" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1"/></svg>
-    <svg class="food-item food-broccoli" viewBox="0 0 80 80"><rect x="36" y="48" width="8" height="20" rx="3" fill="#6B8B3D" stroke="#3D5A1E" stroke-width="1"/><circle cx="30" cy="38" r="12" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1.5"/><circle cx="50" cy="38" r="12" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1.5"/><circle cx="40" cy="30" r="12" fill="#5A9E72" stroke="#2C4F3A" stroke-width="1.5"/></svg>
-    <svg class="food-item food-raspberry" viewBox="0 0 80 80"><circle cx="34" cy="38" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/><circle cx="46" cy="38" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/><circle cx="40" cy="30" r="6" fill="#E8627C" stroke="#8B2040" stroke-width="1"/><circle cx="34" cy="48" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/><circle cx="46" cy="48" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/><circle cx="40" cy="56" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/><path d="M36 24 L40 16 L44 24" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1"/></svg>
-    <svg class="food-item food-almond" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="12" ry="18" fill="#D4A76A" stroke="#8B6914" stroke-width="1.5" transform="rotate(-15 30 30)"/></svg>
-    <svg class="food-item food-oat" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="8" ry="14" fill="#E8D5A3" stroke="#A08040" stroke-width="1" transform="rotate(10 30 30)"/><line x1="30" y1="16" x2="30" y2="44" stroke="#A08040" stroke-width="0.8"/></svg>
-
-    <!-- Duplicated set for more coverage -->
-    <svg class="food-item food-banana-2" viewBox="0 0 80 80"><path d="M20 55 C15 40 25 15 50 12 C55 11 58 14 55 18 C40 22 30 40 28 55 C27 60 22 60 20 55Z" fill="#F7D44C" stroke="#5A4A1E" stroke-width="1.5"/></svg>
-    <svg class="food-item food-strawberry-2" viewBox="0 0 80 80"><path d="M40 15 C30 15 18 30 18 48 C18 62 28 68 40 68 C52 68 62 62 62 48 C62 30 50 15 40 15Z" fill="#E8627C" stroke="#8B2040" stroke-width="1.5"/><circle cx="32" cy="40" r="1.5" fill="#FDF6EC"/><circle cx="40" cy="45" r="1.5" fill="#FDF6EC"/><circle cx="48" cy="40" r="1.5" fill="#FDF6EC"/><path d="M35 15 L40 8 L45 15" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1"/></svg>
-    <svg class="food-item food-apple-2" viewBox="0 0 80 80"><path d="M40 18 C28 18 16 30 16 48 C16 62 26 70 40 70 C54 70 64 62 64 48 C64 30 52 18 40 18Z" fill="#76C44E" stroke="#3D6B1F" stroke-width="1.5"/><path d="M40 18 C40 10 48 6 52 8" fill="none" stroke="#4A8A5F" stroke-width="2"/></svg>
-    <svg class="food-item food-carrot-2" viewBox="0 0 80 80"><path d="M35 20 L28 65 C28 68 32 70 35 68 L42 65 L35 20Z" fill="#F5923E" stroke="#8B4513" stroke-width="1.5"/><path d="M32 20 C28 12 35 8 38 14 C42 8 48 12 44 20" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1"/></svg>
-    <svg class="food-item food-broccoli-2" viewBox="0 0 80 80"><rect x="36" y="48" width="8" height="20" rx="3" fill="#6B8B3D" stroke="#3D5A1E" stroke-width="1"/><circle cx="30" cy="38" r="12" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1.5"/><circle cx="50" cy="38" r="12" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1.5"/><circle cx="40" cy="30" r="12" fill="#5A9E72" stroke="#2C4F3A" stroke-width="1.5"/></svg>
-    <svg class="food-item food-raspberry-2" viewBox="0 0 80 80"><circle cx="34" cy="38" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/><circle cx="46" cy="38" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/><circle cx="40" cy="30" r="6" fill="#E8627C" stroke="#8B2040" stroke-width="1"/><circle cx="34" cy="48" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/><circle cx="46" cy="48" r="6" fill="#C94A62" stroke="#8B2040" stroke-width="1"/></svg>
-    <svg class="food-item food-almond-2" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="12" ry="18" fill="#D4A76A" stroke="#8B6914" stroke-width="1.5" transform="rotate(20 30 30)"/></svg>
-    <svg class="food-item food-oat-2" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="8" ry="14" fill="#E8D5A3" stroke="#A08040" stroke-width="1" transform="rotate(-15 30 30)"/><line x1="30" y1="16" x2="30" y2="44" stroke="#A08040" stroke-width="0.8"/></svg>
-
-    <!-- Third set -->
-    <svg class="food-item food-banana-3" viewBox="0 0 80 80"><path d="M20 55 C15 40 25 15 50 12 C55 11 58 14 55 18 C40 22 30 40 28 55 C27 60 22 60 20 55Z" fill="#F7D44C" stroke="#5A4A1E" stroke-width="1.5"/></svg>
-    <svg class="food-item food-strawberry-3" viewBox="0 0 80 80"><path d="M40 15 C30 15 18 30 18 48 C18 62 28 68 40 68 C52 68 62 62 62 48 C62 30 50 15 40 15Z" fill="#E8627C" stroke="#8B2040" stroke-width="1.5"/><circle cx="32" cy="40" r="1.5" fill="#FDF6EC"/><circle cx="48" cy="40" r="1.5" fill="#FDF6EC"/><path d="M35 15 L40 8 L45 15" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1"/></svg>
-    <svg class="food-item food-apple-3" viewBox="0 0 80 80"><path d="M40 18 C28 18 16 30 16 48 C16 62 26 70 40 70 C54 70 64 62 64 48 C64 30 52 18 40 18Z" fill="#E85050" stroke="#8B2020" stroke-width="1.5"/><path d="M40 18 C40 10 48 6 52 8" fill="none" stroke="#4A8A5F" stroke-width="2"/></svg>
-    <svg class="food-item food-carrot-3" viewBox="0 0 80 80"><path d="M35 20 L28 65 C28 68 32 70 35 68 L42 65 L35 20Z" fill="#F5923E" stroke="#8B4513" stroke-width="1.5"/><path d="M32 20 C28 12 35 8 38 14 C42 8 48 12 44 20" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1"/></svg>
-    <svg class="food-item food-almond-3" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="12" ry="18" fill="#D4A76A" stroke="#8B6914" stroke-width="1.5" transform="rotate(-25 30 30)"/></svg>
-    <svg class="food-item food-broccoli-3" viewBox="0 0 80 80"><rect x="36" y="48" width="8" height="20" rx="3" fill="#6B8B3D" stroke="#3D5A1E" stroke-width="1"/><circle cx="30" cy="38" r="12" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1.5"/><circle cx="50" cy="38" r="12" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1.5"/><circle cx="40" cy="30" r="12" fill="#5A9E72" stroke="#2C4F3A" stroke-width="1.5"/></svg>
-  </div>
-
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container nav-container">
-      <a href="#" class="nav-logo">FIBI</a>
+      <a href="#" class="nav-logo">fibifoods</a>
       <ul class="nav-links">
-        <li><a href="#bars">Our Bars</a></li>
-        <li><a href="#ingredients">Ingredients</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#story">Our Story</a></li>
-        <li><a href="#waitlist" class="btn btn-nav">Shop Now</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="mobile-toggle" aria-label="Toggle menu">
         <span></span>
@@ -66,413 +32,76 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="container hero-container">
-      <div class="hero-logo-wrapper">
-        <div class="hero-logo-badge">
-          <div class="scallop-circle">
-            <div class="logo-inner">
-              <span class="logo-text">Fibi</span>
-              <span class="logo-subtext">FOODS</span>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="hero-content">
-        <p class="hero-tag">HIGH FIBER. WHOLE FOOD. INSANELY DELICIOUS.</p>
-        <h1 class="hero-title">The Fiber Bar<br>You'll Actually <span class="text-pink-glow">Crave.</span></h1>
-        <p class="hero-description">
-          Fibi isn't a supplement — it's food. We ditched the gummy texture and the fruit-leather feel
-          for a bar that eats like a treat but works like a powerhouse. 10g of fiber per bar.
-          No gimmicks. Just real, whole-food ingredients your gut will thank you for.
-        </p>
-        <div class="hero-buttons">
-          <a href="#waitlist" class="btn btn-primary btn-lg">Shop Now</a>
-          <a href="#about" class="btn btn-outline btn-lg">Learn More</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number">10g</span>
-            <span class="stat-label">Fiber Per Bar</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">33%</span>
-            <span class="stat-label">Daily Value</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Whole Food</span>
-          </div>
+        <h1 class="hero-title">Fibi Foods:<br>Real Ingredients,<br>Real Fiber.</h1>
+        <p class="hero-description">Fiber bars that actually taste good. No fake stuff. Just plants.</p>
+        <a href="#shop" class="btn btn-primary">Shop Now</a>
+      </div>
+      <div class="hero-visual">
+        <!-- Yellow organic blob shapes behind the bar -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <!-- Chocolate drips from top -->
+        <svg class="chocolate-drips" viewBox="0 0 300 80" aria-hidden="true">
+          <path d="M0 0 L300 0 L300 20 Q280 20 275 35 Q272 50 270 20 L260 20 Q255 25 252 20 L220 20 Q215 30 212 45 Q210 55 208 20 L180 20 Q175 25 172 20 L140 20 Q135 35 132 55 Q130 65 128 20 L100 20 Q95 25 92 20 L70 20 Q65 40 62 55 Q60 60 58 20 L30 20 Q25 25 22 20 L0 20 Z" fill="#5C3D2E"/>
+        </svg>
+        <!-- Fiber bar illustration -->
+        <div class="bar-wrapper">
+          <svg class="bar-illustration" viewBox="0 0 240 120" aria-hidden="true">
+            <!-- Bar wrapper -->
+            <rect x="10" y="15" width="220" height="90" rx="12" fill="#7B5EA7"/>
+            <rect x="10" y="15" width="220" height="90" rx="12" fill="url(#wrapperGrad)" opacity="0.3"/>
+            <!-- Wrapper edge fold -->
+            <path d="M10 30 Q15 15 30 15 L210 15 Q225 15 230 30" fill="#6B4E97" opacity="0.5"/>
+            <!-- Label area -->
+            <rect x="30" y="35" width="180" height="50" rx="8" fill="rgba(255,255,255,0.15)"/>
+            <!-- Brand text on bar -->
+            <text x="120" y="58" text-anchor="middle" font-family="'Caveat', cursive" font-size="22" font-weight="700" fill="#FFF">fibi bar</text>
+            <!-- Subtext -->
+            <text x="120" y="76" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="rgba(255,255,255,0.7)" letter-spacing="2">HIGH FIBER</text>
+            <defs>
+              <linearGradient id="wrapperGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFF" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#000" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Our Bars Section -->
-  <section class="bars-section" id="bars">
+  <!-- Why Fibi Section -->
+  <section class="why-section" id="about">
     <div class="container">
-      <div class="section-header">
-        <div class="stamp-badge">
-          <span>NEW</span>
-        </div>
-        <h2 class="section-title-retro">Our Bars</h2>
-        <p class="section-subtitle">Crafted with love, powered by fiber. Every bar is a mini meal of whole-food goodness.</p>
-      </div>
-
-      <div class="bars-grid">
-        <div class="bar-card">
-          <div class="bar-card-badge">BESTSELLER</div>
-          <div class="bar-visual">
-            <div class="bar-icon-circle">
-              <svg viewBox="0 0 80 40"><rect x="5" y="8" width="70" height="24" rx="6" fill="#8B6914" stroke="#5A4A1E" stroke-width="2"/><rect x="8" y="11" width="64" height="18" rx="4" fill="#A0784A"/><circle cx="20" cy="20" r="3" fill="#D4A76A"/><circle cx="35" cy="18" r="2" fill="#E8D5A3"/><circle cx="50" cy="22" r="2.5" fill="#D4A76A"/><circle cx="60" cy="18" r="2" fill="#E8D5A3"/></svg>
-            </div>
-          </div>
-          <h3>Chocolate Almond Crunch</h3>
-          <p>Rich dark chocolate meets toasted almonds and oats. A satisfying crunch in every bite with 10g of fiber from whole food sources.</p>
-          <div class="bar-nutrition">
-            <span>10g Fiber</span>
-            <span>8g Protein</span>
-            <span>180 Cal</span>
-          </div>
-          <a href="#waitlist" class="btn btn-bar">Shop Now</a>
-        </div>
-
-        <div class="bar-card">
-          <div class="bar-card-badge">FAN FAVE</div>
-          <div class="bar-visual">
-            <div class="bar-icon-circle">
-              <svg viewBox="0 0 80 40"><rect x="5" y="8" width="70" height="24" rx="6" fill="#C4892A" stroke="#8B5E14" stroke-width="2"/><rect x="8" y="11" width="64" height="18" rx="4" fill="#D4A050"/><circle cx="18" cy="20" r="3" fill="#E8D5A3"/><circle cx="32" cy="17" r="2.5" fill="#8B6914"/><circle cx="48" cy="22" r="2" fill="#E8D5A3"/><circle cx="62" cy="19" r="3" fill="#8B6914"/></svg>
-            </div>
-          </div>
-          <h3>Peanut Butter Date</h3>
-          <p>Creamy peanut butter swirled with Medjool dates and rolled oats. Naturally sweet, impossibly satisfying, and packed with 10g of fiber.</p>
-          <div class="bar-nutrition">
-            <span>10g Fiber</span>
-            <span>9g Protein</span>
-            <span>190 Cal</span>
-          </div>
-          <a href="#waitlist" class="btn btn-bar">Shop Now</a>
-        </div>
-
-        <div class="bar-card">
-          <div class="bar-card-badge">NEW DROP</div>
-          <div class="bar-visual">
-            <div class="bar-icon-circle">
-              <svg viewBox="0 0 80 40"><rect x="5" y="8" width="70" height="24" rx="6" fill="#5A8A3D" stroke="#3D5A1E" stroke-width="2"/><rect x="8" y="11" width="64" height="18" rx="4" fill="#76A050"/><circle cx="20" cy="20" r="2.5" fill="#A0C878"/><circle cx="38" cy="17" r="3" fill="#D4A76A"/><circle cx="55" cy="22" r="2" fill="#A0C878"/><circle cx="65" cy="18" r="2.5" fill="#D4A76A"/></svg>
-            </div>
-          </div>
-          <h3>Coconut Matcha Bliss</h3>
-          <p>Ceremonial-grade matcha layered with toasted coconut flakes and cashews. Zen in a bar, with a gentle caffeine lift and 10g of gut-loving fiber.</p>
-          <div class="bar-nutrition">
-            <span>10g Fiber</span>
-            <span>7g Protein</span>
-            <span>170 Cal</span>
-          </div>
-          <a href="#waitlist" class="btn btn-bar">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- High Fiber Ingredients Section -->
-  <section class="ingredients-section" id="ingredients">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title-retro">High Fiber Ingredients</h2>
-        <p class="section-subtitle">Every ingredient earns its place. No fillers, no synthetics — just whole foods that deliver real nutrition.</p>
-      </div>
-
-      <div class="ingredients-grid">
-        <div class="ingredient-card">
-          <div class="ingredient-icon">
-            <svg viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="8" ry="14" fill="#E8D5A3" stroke="#A08040" stroke-width="1.5"/><line x1="30" y1="16" x2="30" y2="44" stroke="#A08040" stroke-width="1"/></svg>
-          </div>
-          <h4>Rolled Oats</h4>
-          <p>Whole grain, high in beta-glucan soluble fiber. Keeps you full and feeds your good gut bacteria.</p>
-        </div>
-        <div class="ingredient-card">
-          <div class="ingredient-icon">
-            <svg viewBox="0 0 60 60"><ellipse cx="30" cy="32" rx="14" ry="10" fill="#8B5E14" stroke="#5A3A0A" stroke-width="1.5"/><path d="M20 28 Q30 18 40 28" fill="#A07030" stroke="#5A3A0A" stroke-width="1"/></svg>
-          </div>
-          <h4>Medjool Dates</h4>
-          <p>Nature's candy. Packed with fiber, potassium, and antioxidants. Our bars' natural sweetener.</p>
-        </div>
-        <div class="ingredient-card">
-          <div class="ingredient-icon">
-            <svg viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="12" ry="18" fill="#D4A76A" stroke="#8B6914" stroke-width="1.5" transform="rotate(-10 30 30)"/></svg>
-          </div>
-          <h4>Almonds</h4>
-          <p>Toasted to perfection. A powerhouse of fiber, healthy fats, vitamin E, and satisfying crunch.</p>
-        </div>
-        <div class="ingredient-card">
-          <div class="ingredient-icon">
-            <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="14" fill="#3D2B1F" stroke="#1A0F0A" stroke-width="1.5"/><path d="M22 26 Q30 20 38 26" fill="none" stroke="#FDF6EC" stroke-width="1" opacity="0.4"/></svg>
-          </div>
-          <h4>Dark Chocolate</h4>
-          <p>72% cacao. Rich in fiber and flavonoids. Because healthy should never mean boring.</p>
-        </div>
-        <div class="ingredient-card">
-          <div class="ingredient-icon">
-            <svg viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="16" ry="14" fill="#FDF6EC" stroke="#A08040" stroke-width="1.5"/><ellipse cx="30" cy="30" rx="10" ry="8" fill="#F5EBDA" stroke="#A08040" stroke-width="1"/></svg>
-          </div>
-          <h4>Coconut</h4>
-          <p>Toasted flakes loaded with MCTs and fiber. Adds tropical flavor and satisfying texture.</p>
-        </div>
-        <div class="ingredient-card">
-          <div class="ingredient-icon">
-            <svg viewBox="0 0 60 60"><path d="M20 40 Q22 20 30 15 Q38 20 40 40 Z" fill="#4A8A5F" stroke="#2C4F3A" stroke-width="1.5"/><line x1="30" y1="15" x2="30" y2="42" stroke="#2C4F3A" stroke-width="1" opacity="0.5"/></svg>
-          </div>
-          <h4>Flax Seeds</h4>
-          <p>Omega-3 rich superfood. Each serving adds soluble and insoluble fiber for complete gut health.</p>
-        </div>
-      </div>
-
-      <div class="ingredients-callout">
-        <div class="callout-badge">
-          <span class="callout-number">0</span>
-          <span class="callout-text">Artificial Ingredients</span>
-        </div>
-        <p>Every Fibi bar contains only ingredients you can find in your kitchen. We believe food should be food — recognizable, pronounceable, and real. That's not a marketing claim; it's a promise.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="about-stamp">
-            <div class="stamp-outer">
-              <div class="stamp-inner">
-                <span class="stamp-top-text">MOM-TESTED</span>
-                <span class="stamp-main-text">FOUNDER</span>
-                <span class="stamp-main-text">OBSESSED</span>
-                <span class="stamp-bottom-text">EST. 2024</span>
-              </div>
-            </div>
-          </div>
-          <div class="about-mini-stamps">
-            <div class="mini-stamp"><span>VEGAN</span></div>
-            <div class="mini-stamp"><span>NON-GMO</span></div>
-            <div class="mini-stamp"><span>NO ADDED SUGAR</span></div>
-          </div>
-        </div>
-        <div class="about-content">
-          <h2 class="section-title-retro">About Us</h2>
-          <p class="about-lead">We're on a mission to make fiber the most delicious part of your day.</p>
-          <p>
-            Fibi was born out of frustration. As a health-obsessed vegan who tracks fiber like
-            others track protein, our founder couldn't find a single convenient fiber source that didn't
-            taste like cardboard, feel like medicine, or come wrapped in a list of ingredients that
-            read like a chemistry textbook.
-          </p>
-          <p>
-            Here's the truth: <strong>95% of Americans don't get enough fiber.</strong> That's not a minor gap —
-            fiber is the unsung hero of gut health, heart health, blood sugar control, and even mood regulation.
-            Yet the products on shelves treat it like an afterthought — something to choke down, not something to enjoy.
-          </p>
-          <p>
-            We called in the expert. Fibi bars were co-developed with a <strong>recipe developer
-            and food blogger with 25+ years of culinary experience</strong> — someone with a reputation for
-            turning healthy ingredients into legendary dishes in her Bangalore kitchen.
-          </p>
-          <p class="about-highlight">
-            The result? A recipe that balances high-impact nutrition with culinary-grade flavor.
-            Every bar is hand-crafted with whole foods you can see, taste, and trust.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Story Section -->
-  <section class="story-section" id="story">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title-retro">Our Story</h2>
-      </div>
-
-      <div class="story-timeline">
-        <div class="story-step">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h3>The Problem</h3>
-            <p>We looked at every fiber bar, supplement, and powder on the market. They were either loaded with artificial sweeteners and isolated fibers, or they tasted like sawdust wrapped in false promises. The fiber aisle was broken — and nobody seemed to care enough to fix it.</p>
-          </div>
-        </div>
-        <div class="story-step">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h3>The Obsession</h3>
-            <p>Our founder spent over a year obsessing over recipes. Hundreds of test batches. Dozens of ingredient combinations. Feedback from family, friends, nutritionists, and anyone who would take a bite. The goal was simple: make something that someone who doesn't care about fiber would still devour.</p>
-          </div>
-        </div>
-        <div class="story-step">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h3>The Breakthrough</h3>
-            <p>When we partnered with a legendary recipe developer from Bangalore — a culinary artist who'd spent 25+ years making healthy food taste extraordinary — everything clicked. She brought traditional food wisdom to modern nutrition science, and the Fibi bar was born.</p>
-          </div>
-        </div>
-        <div class="story-step">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h3>The Mission</h3>
-            <p>Today, Fibi is more than a bar. It's a movement. We believe fiber shouldn't be a chore — it should be the snack you reach for because it's genuinely delicious. We're building a future where high-fiber eating is the norm, not the exception. One bar at a time.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Comparison Section -->
-  <section class="comparison" id="compare">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title-retro">Not All Fiber is <span class="text-pink-glow">Created Equal</span></h2>
-        <p class="section-subtitle">See why Fibi is different from everything else on the shelf.</p>
-      </div>
-
-      <div class="comparison-grid">
-        <div class="comparison-col comparison-old">
-          <div class="comparison-header">
-            <span class="comparison-icon">&#10007;</span>
-            <h3>The Old Way</h3>
-          </div>
-          <div class="comparison-items">
-            <div class="comparison-item">
-              <h4>Fiber Powders</h4>
-              <p>Gritty, medicinal, and chemically isolated. Often cause bloating and discomfort.</p>
-            </div>
-            <div class="comparison-item">
-              <h4>"Fiber" Snacks</h4>
-              <p>Loaded with artificial sugars, syrups, and isolated fiber (looking at you, Fiber One).</p>
-            </div>
-            <div class="comparison-item">
-              <h4>Fruit Bars</h4>
-              <p>Sticky, chewy, and lacking crunch. More sugar bomb than nutrition bar.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="comparison-divider">
-          <span>VS</span>
-        </div>
-
-        <div class="comparison-col comparison-new">
-          <div class="comparison-header">
-            <span class="comparison-icon">&#10003;</span>
-            <h3>The Fibi Way</h3>
-          </div>
-          <div class="comparison-items">
-            <div class="comparison-item">
-              <h4>Whole Food Fiber</h4>
-              <p>Delicious, whole-food texture using oats, nuts, and seeds. Gentle on your gut.</p>
-            </div>
-            <div class="comparison-item">
-              <h4>Clean Label</h4>
-              <p>Sweetened naturally with dates and fruit. Zero artificial anything. Ever.</p>
-            </div>
-            <div class="comparison-item">
-              <h4>Real Satisfaction</h4>
-              <p>A satisfying, nutty, chocolatey experience that happens to be insanely nutritious.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fiber Facts Banner -->
-  <section class="fiber-facts">
-    <div class="container">
-      <div class="facts-marquee">
-        <div class="facts-track">
-          <span class="fact-item">95% of Americans don't get enough fiber</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">Fiber feeds your gut microbiome</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">Fiber helps regulate blood sugar</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">Fiber keeps you full longer</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">One Fibi bar = 33% of your daily fiber</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">Whole food fiber is gentler on your gut</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">95% of Americans don't get enough fiber</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">Fiber feeds your gut microbiome</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">Fiber helps regulate blood sugar</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">Fiber keeps you full longer</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">One Fibi bar = 33% of your daily fiber</span>
-          <span class="fact-separator">&bull;</span>
-          <span class="fact-item">Whole food fiber is gentler on your gut</span>
-          <span class="fact-separator">&bull;</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA / Waitlist Section -->
-  <section class="cta" id="waitlist">
-    <div class="container cta-container">
-      <div class="cta-badge">
-        <div class="scallop-circle scallop-small">
-          <div class="logo-inner">
-            <span class="cta-badge-text">FIBER<br>FIRST</span>
-          </div>
-        </div>
-      </div>
-      <h2 class="cta-title">Your Gut (And Your Tastebuds) Will <span class="text-cream">Thank You.</span></h2>
-      <p class="cta-description">Join the movement to make fiber a delicious part of your daily ritual. Be the first to know when new flavors drop, get exclusive offers, and become part of the Fibi family.</p>
-      <form class="waitlist-form" onsubmit="handleWaitlist(event)">
-        <div class="form-group">
-          <input type="email" placeholder="Enter your email" required class="form-input" id="waitlist-email">
-          <button type="submit" class="btn btn-cta">Join the Waitlist</button>
-        </div>
-        <p class="form-note">Be the first to know when Fibi launches. No spam, ever. Unsubscribe anytime.</p>
-      </form>
-      <div id="waitlist-success" class="waitlist-success" style="display:none;">
-        <p>You're on the list! We'll be in touch soon.</p>
-      </div>
+      <h2 class="section-title">Why Fibi?</h2>
+      <ul class="benefits-list">
+        <li>
+          <span class="check-icon">&#10003;</span>
+          <span>High Fiber</span>
+        </li>
+        <li>
+          <span class="check-icon">&#10003;</span>
+          <span>Delicious</span>
+        </li>
+        <li>
+          <span class="check-icon">&#10003;</span>
+          <span>Plant-Based</span>
+        </li>
+        <li>
+          <span class="check-icon">&#10003;</span>
+          <span>No Weird Ingredients</span>
+        </li>
+      </ul>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" id="contact">
     <div class="container footer-container">
-      <div class="footer-brand">
-        <a href="#" class="footer-logo-text">FIBI</a>
-        <p class="footer-tagline">Making fiber the best part of your day.</p>
-      </div>
-      <div class="footer-columns">
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <a href="#bars">Our Bars</a>
-          <a href="#ingredients">Ingredients</a>
-          <a href="#waitlist">Shop Now</a>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="#about">About Us</a>
-          <a href="#story">Our Story</a>
-          <a href="#compare">Why Fibi</a>
-        </div>
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <a href="#">Instagram</a>
-          <a href="#">Twitter</a>
-          <a href="#">Email Us</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Fibi Foods. All rights reserved. Made with whole foods and whole hearts.</p>
-      </div>
+      <span class="footer-brand">Fibi Foods</span>
+      <p class="footer-copy">&copy; 2024 Fibi Foods. All rights reserved.</p>
     </div>
   </footer>
 

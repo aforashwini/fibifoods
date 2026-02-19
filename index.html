@@ -4,185 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fibi Foods — Real Ingredients, Real Fiber</title>
+
+  <!-- Google Fonts: Permanent Marker (headings), Patrick Hand (body), Amatic SC (accent) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'fibi-green': '#A4D67E',
+            'fibi-blue': '#102E96',
+            'fibi-yellow': '#FDF485',
+            'fibi-cream': '#FEFEFE',
+            'fibi-nav': '#F0F7E6',
+          },
+          fontFamily: {
+            'marker': ['"Permanent Marker"', 'cursive'],
+            'hand': ['"Patrick Hand"', 'cursive'],
+            'amatic': ['"Amatic SC"', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- React 18 CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    /* Ensure green bg spans full viewport even though content is max-w-lg */
+    html, body { margin: 0; padding: 0; }
+  </style>
 </head>
-<body>
+<body class="bg-fibi-green min-h-screen">
 
-  <!-- LAYER 0: Light green background (set on body) -->
+  <div id="root"></div>
 
-  <!-- LAYER 1: Yellow peanut shapes scattered across the page -->
-  <div class="peanut-layer" aria-hidden="true">
-    <!-- Peanut 1 — top-left -->
-    <svg class="peanut peanut-1" viewBox="0 0 220 120">
-      <path d="M40 60 C40 25 65 8 95 10 C110 11 120 18 125 28 C130 18 140 11 155 10 C185 8 210 25 210 60 C210 95 185 112 155 110 C140 109 130 102 125 92 C120 102 110 109 95 110 C65 112 40 95 40 60Z" fill="#F2D544"/>
-      <ellipse cx="85" cy="58" rx="22" ry="28" fill="#E8C830" opacity="0.4"/>
-      <ellipse cx="165" cy="58" rx="22" ry="28" fill="#E8C830" opacity="0.4"/>
-      <path d="M120 30 C122 40 122 80 120 90" stroke="#D4B520" stroke-width="2" fill="none" opacity="0.5"/>
-    </svg>
+  <script type="text/babel">
+    /* =============================================
+       FIBI FOODS — React + Tailwind Landing Page
+       Phase 1: Master Context / Foundation
+       ============================================= */
 
-    <!-- Peanut 2 — right side, mid -->
-    <svg class="peanut peanut-2" viewBox="0 0 220 120">
-      <path d="M40 60 C40 25 65 8 95 10 C110 11 120 18 125 28 C130 18 140 11 155 10 C185 8 210 25 210 60 C210 95 185 112 155 110 C140 109 130 102 125 92 C120 102 110 109 95 110 C65 112 40 95 40 60Z" fill="#F0D240"/>
-      <ellipse cx="85" cy="58" rx="22" ry="28" fill="#E0C028" opacity="0.4"/>
-      <ellipse cx="165" cy="58" rx="22" ry="28" fill="#E0C028" opacity="0.4"/>
-      <path d="M120 30 C122 40 122 80 120 90" stroke="#CCAA18" stroke-width="2" fill="none" opacity="0.5"/>
-    </svg>
+    function App() {
+      return (
+        <div className="min-h-screen bg-fibi-green">
+          {/* Content container — mobile poster feel, centered */}
+          <div className="max-w-lg mx-auto relative">
 
-    <!-- Peanut 3 — bottom-left -->
-    <svg class="peanut peanut-3" viewBox="0 0 220 120">
-      <path d="M40 60 C40 25 65 8 95 10 C110 11 120 18 125 28 C130 18 140 11 155 10 C185 8 210 25 210 60 C210 95 185 112 155 110 C140 109 130 102 125 92 C120 102 110 109 95 110 C65 112 40 95 40 60Z" fill="#F5DA4A"/>
-      <ellipse cx="85" cy="58" rx="22" ry="28" fill="#E8C830" opacity="0.4"/>
-      <ellipse cx="165" cy="58" rx="22" ry="28" fill="#E8C830" opacity="0.4"/>
-      <path d="M120 30 C122 40 122 80 120 90" stroke="#D4B520" stroke-width="2" fill="none" opacity="0.5"/>
-    </svg>
+            {/* Phase 1 placeholder — will be replaced by Phase 2 & 3 */}
+            <div className="p-8">
+              <p className="font-marker text-fibi-blue text-5xl leading-tight mb-4">
+                Fibi Foods
+              </p>
+              <p className="font-hand text-fibi-blue text-2xl mb-2">
+                Phase 1 foundation ready.
+              </p>
+              <p className="font-amatic text-fibi-blue text-3xl font-bold">
+                Fonts, colors, and layout are configured.
+              </p>
+            </div>
 
-    <!-- Peanut 4 — top-right area -->
-    <svg class="peanut peanut-4" viewBox="0 0 220 120">
-      <path d="M40 60 C40 25 65 8 95 10 C110 11 120 18 125 28 C130 18 140 11 155 10 C185 8 210 25 210 60 C210 95 185 112 155 110 C140 109 130 102 125 92 C120 102 110 109 95 110 C65 112 40 95 40 60Z" fill="#EED038"/>
-      <ellipse cx="85" cy="58" rx="22" ry="28" fill="#DDBB20" opacity="0.4"/>
-      <ellipse cx="165" cy="58" rx="22" ry="28" fill="#DDBB20" opacity="0.4"/>
-      <path d="M120 30 C122 40 122 80 120 90" stroke="#CCAA18" stroke-width="2" fill="none" opacity="0.5"/>
-    </svg>
-  </div>
-
-  <!-- LAYER 2: The giant granola bar -->
-  <div class="bar-layer" aria-hidden="true">
-    <div class="giant-bar">
-      <svg class="bar-svg" viewBox="0 0 700 260">
-        <!-- Lavender wrapper -->
-        <rect x="0" y="30" width="700" height="200" rx="22" fill="#C4B0E0"/>
-        <!-- Wrapper sheen -->
-        <rect x="0" y="30" width="700" height="95" rx="22" fill="rgba(255,255,255,0.12)"/>
-        <!-- Left crinkle -->
-        <path d="M0 60 C5 35 18 30 35 30 L35 230 C18 230 5 225 0 200Z" fill="#B49DD0" opacity="0.7"/>
-        <!-- Right crinkle -->
-        <path d="M700 60 C695 35 682 30 665 30 L665 230 C682 230 695 225 700 200Z" fill="#B49DD0" opacity="0.7"/>
-        <!-- Wrapper fold lines -->
-        <line x1="50" y1="50" x2="50" y2="210" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-        <line x1="650" y1="50" x2="650" y2="210" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-
-        <!-- Label area -->
-        <rect x="80" y="55" width="540" height="150" rx="16" fill="rgba(255,255,255,0.1)"/>
-
-        <!-- Brand text on wrapper -->
-        <text x="350" y="125" text-anchor="middle" font-family="'Caveat', cursive" font-size="62" font-weight="700" fill="#FFFFFF">fibi bar</text>
-        <text x="350" y="168" text-anchor="middle" font-family="'Patrick Hand', cursive" font-size="20" fill="rgba(255,255,255,0.55)" letter-spacing="6">HIGH FIBER • PLANT BASED</text>
-
-        <!-- Granola texture visible at the top of bar — nuts, oats, chocolate -->
-        <!-- Oat clusters -->
-        <ellipse cx="120" cy="38" rx="18" ry="8" fill="#C49A5C" transform="rotate(-10 120 38)"/>
-        <ellipse cx="180" cy="32" rx="14" ry="7" fill="#B8904A" transform="rotate(15 180 32)"/>
-        <ellipse cx="250" cy="36" rx="16" ry="6" fill="#D4B07A" transform="rotate(-5 250 36)"/>
-        <ellipse cx="330" cy="33" rx="12" ry="7" fill="#C49A5C" transform="rotate(20 330 33)"/>
-        <ellipse cx="400" cy="37" rx="18" ry="7" fill="#B8904A" transform="rotate(-12 400 37)"/>
-        <ellipse cx="470" cy="34" rx="14" ry="6" fill="#D4B07A" transform="rotate(8 470 34)"/>
-        <ellipse cx="540" cy="36" rx="16" ry="7" fill="#C49A5C" transform="rotate(-18 540 36)"/>
-        <ellipse cx="600" cy="33" rx="12" ry="6" fill="#B8904A" transform="rotate(5 600 33)"/>
-
-        <!-- Chocolate chunks -->
-        <rect x="140" y="28" width="14" height="12" rx="3" fill="#5C3D2E" transform="rotate(15 147 34)"/>
-        <rect x="290" y="30" width="16" height="10" rx="3" fill="#4A2E20" transform="rotate(-8 298 35)"/>
-        <rect x="440" y="28" width="12" height="11" rx="3" fill="#5C3D2E" transform="rotate(22 446 33)"/>
-        <rect x="570" y="30" width="14" height="10" rx="3" fill="#4A2E20" transform="rotate(-5 577 35)"/>
-
-        <!-- Nut halves -->
-        <ellipse cx="210" cy="32" rx="8" ry="5" fill="#A07840" transform="rotate(30 210 32)"/>
-        <ellipse cx="370" cy="35" rx="9" ry="6" fill="#8B6530" transform="rotate(-20 370 35)"/>
-        <ellipse cx="510" cy="32" rx="7" ry="5" fill="#A07840" transform="rotate(12 510 32)"/>
-
-        <!-- More scattered crumbs -->
-        <circle cx="155" cy="26" r="3" fill="#8B6530"/>
-        <circle cx="230" cy="28" r="2.5" fill="#D4B07A"/>
-        <circle cx="310" cy="27" r="3" fill="#A07840"/>
-        <circle cx="420" cy="26" r="2" fill="#C49A5C"/>
-        <circle cx="490" cy="28" r="3" fill="#8B6530"/>
-        <circle cx="560" cy="26" r="2.5" fill="#D4B07A"/>
-        <circle cx="630" cy="28" r="2" fill="#A07840"/>
-
-        <!-- Bottom edge granola bits -->
-        <ellipse cx="150" cy="228" rx="10" ry="5" fill="#C49A5C" transform="rotate(10 150 228)"/>
-        <ellipse cx="280" cy="230" rx="8" ry="4" fill="#B8904A" transform="rotate(-15 280 230)"/>
-        <ellipse cx="420" cy="228" rx="12" ry="5" fill="#D4B07A" transform="rotate(8 420 228)"/>
-        <ellipse cx="560" cy="230" rx="9" ry="4" fill="#C49A5C" transform="rotate(-20 560 230)"/>
-
-        <!-- Chocolate drip from top -->
-        <path d="M160 30 Q162 18 164 10 Q165 5 166 10 Q168 18 170 30" fill="#5C3D2E"/>
-        <path d="M350 30 Q353 12 356 0 Q357 -5 358 0 Q361 12 364 30" fill="#4A2E20"/>
-        <path d="M520 30 Q522 20 524 14 Q525 10 526 14 Q528 20 530 30" fill="#5C3D2E"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- LAYER 3: All text content on top — handwritten style -->
-  <div class="text-layer">
-
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="container nav-container">
-        <a href="#" class="nav-logo">fibifoods</a>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Hero Text -->
-    <section class="hero" id="hero">
-      <div class="container hero-container">
-        <div class="hero-content">
-          <h1 class="hero-title">Fibi Foods:<br>Real Ingredients,<br>Real Fiber.</h1>
-          <p class="hero-description">Fiber bars that actually taste good.<br>No fake stuff. Just plants.</p>
-          <a href="#shop" class="btn btn-primary" id="shop">Shop Now</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Fibi Section -->
-    <section class="why-section" id="about">
-      <div class="container">
-        <h2 class="section-title">Why Fibi?</h2>
-        <div class="benefits-grid">
-          <div class="benefit-item">
-            <span class="check-icon">&#10003;</span>
-            <span>High Fiber</span>
-          </div>
-          <div class="benefit-item">
-            <span class="check-icon">&#10003;</span>
-            <span>Delicious</span>
-          </div>
-          <div class="benefit-item">
-            <span class="check-icon">&#10003;</span>
-            <span>Plant-Based</span>
-          </div>
-          <div class="benefit-item">
-            <span class="check-icon">&#10003;</span>
-            <span>No Weird Ingredients</span>
           </div>
         </div>
-      </div>
-    </section>
+      );
+    }
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-      <div class="container footer-container">
-        <span class="footer-brand">Fibi Foods</span>
-        <p class="footer-copy">&copy; 2024 Fibi Foods. All rights reserved.</p>
-      </div>
-    </footer>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
 
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>

@@ -1,7 +1,9 @@
 /* ============================================
-   FIBI FOODS — Playful Organic Landing Page
-   Bright green bg, yellow splatters, blue text,
-   cursive logo, tilted bar, 2x2 benefits grid
+   FIBI FOODS — Layered, Exaggerated Landing Page
+   Layer 0: Light green background
+   Layer 1: Yellow peanut shapes
+   Layer 2: Giant lavender granola bar
+   Layer 3: Klein blue handwritten text
    ============================================ */
 
 /* --- Reset & Base --- */
@@ -12,20 +14,16 @@
 }
 
 :root {
-  --green-bg: #6DB956;
-  --blue: #2B4FA0;
-  --blue-dark: #1E3A78;
-  --yellow: #E2D44E;
-  --yellow-dark: #D6C83A;
-  --brown: #5C3D2E;
-  --purple: #7B5EA7;
+  --green-bg: #A8D5A2;
+  --klein-blue: #002FA7;
+  --klein-blue-light: #1A4FBB;
+  --yellow-peanut: #F2D544;
+  --lavender: #C4B0E0;
   --white: #FFFFFF;
-  --dark: #222222;
-  --dark-mid: #444444;
+  --dark: #1A1A1A;
   --check-green: #4A9E3F;
-  --font-script: 'Caveat', cursive;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Poppins', 'Inter', sans-serif;
+  --font-heading: 'Caveat', cursive;
+  --font-body: 'Patrick Hand', cursive;
 }
 
 html {
@@ -35,12 +33,13 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--dark);
+  color: var(--klein-blue);
   background-color: var(--green-bg);
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   min-height: 100vh;
+  position: relative;
 }
 
 a {
@@ -49,14 +48,102 @@ a {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 32px;
+}
+
+/* ============================================
+   LAYER 1 — Peanut shapes (fixed behind everything)
+   ============================================ */
+.peanut-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.peanut {
+  position: absolute;
+  opacity: 0.55;
+}
+
+/* Peanut 1: large, top-left */
+.peanut-1 {
+  width: 340px;
+  top: 2%;
+  left: -3%;
+  transform: rotate(-25deg);
+}
+
+/* Peanut 2: large, right side middle */
+.peanut-2 {
+  width: 380px;
+  top: 35%;
+  right: -5%;
+  transform: rotate(40deg);
+}
+
+/* Peanut 3: bottom-left */
+.peanut-3 {
+  width: 300px;
+  bottom: 5%;
+  left: 5%;
+  transform: rotate(15deg);
+}
+
+/* Peanut 4: top-right */
+.peanut-4 {
+  width: 280px;
+  top: 5%;
+  right: 10%;
+  transform: rotate(-50deg);
+}
+
+/* ============================================
+   LAYER 2 — Giant granola bar (centered in hero)
+   ============================================ */
+.bar-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.giant-bar {
+  width: 85vw;
+  max-width: 900px;
+  transform: rotate(-8deg) translateY(5%);
+  filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.2));
+}
+
+.bar-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ============================================
+   LAYER 3 — Text layer (scrollable, on top)
+   ============================================ */
+.text-layer {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
 }
 
 /* --- Navigation --- */
 .navbar {
-  padding: 24px 0 16px;
+  padding: 28px 0 20px;
   position: relative;
   z-index: 100;
 }
@@ -68,29 +155,28 @@ a {
 }
 
 .nav-logo {
-  font-family: var(--font-script);
-  font-size: 2.2rem;
+  font-family: var(--font-heading);
+  font-size: 3rem;
   font-weight: 700;
-  color: var(--blue);
+  color: var(--klein-blue);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
   list-style: none;
 }
 
 .nav-links a {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--yellow);
+  font-size: 1.3rem;
+  color: var(--klein-blue);
   transition: opacity 0.2s;
 }
 
 .nav-links a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .mobile-toggle {
@@ -104,190 +190,121 @@ a {
 }
 
 .mobile-toggle span {
-  width: 24px;
-  height: 2.5px;
-  background: var(--dark);
+  width: 28px;
+  height: 3px;
+  background: var(--klein-blue);
   border-radius: 2px;
   transition: all 0.3s;
 }
 
-/* --- Buttons --- */
+/* --- Hero Section --- */
+.hero {
+  padding: 60px 0 80px;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--klein-blue);
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 8px rgba(168, 213, 162, 0.8);
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--klein-blue);
+  margin-bottom: 36px;
+  text-shadow: 1px 1px 6px rgba(168, 213, 162, 0.8);
+}
+
+/* --- Button --- */
 .btn {
   display: inline-block;
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 12px 32px;
-  border-radius: 4px;
-  border: 2.5px solid var(--dark);
+  font-size: 1.4rem;
+  padding: 14px 42px;
+  border-radius: 6px;
+  border: 3px solid var(--klein-blue);
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
 }
 
 .btn-primary {
-  background: transparent;
-  color: var(--dark);
-  border-color: var(--dark);
+  background: rgba(168, 213, 162, 0.7);
+  color: var(--klein-blue);
+  border-color: var(--klein-blue);
 }
 
 .btn-primary:hover {
-  background: var(--dark);
+  background: var(--klein-blue);
   color: var(--white);
-}
-
-/* --- Hero Section --- */
-.hero {
-  padding: 40px 0 60px;
-  position: relative;
-  overflow: visible;
-}
-
-.hero-container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  position: relative;
-}
-
-.hero-content {
-  flex: 1;
-  max-width: 480px;
-  position: relative;
-  z-index: 5;
-}
-
-.hero-title {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--blue);
-  margin-bottom: 18px;
-}
-
-.hero-description {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: var(--dark-mid);
-  margin-bottom: 28px;
-  font-weight: 400;
-}
-
-/* --- Hero Visual --- */
-.hero-visual {
-  flex: 1;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 380px;
-}
-
-/* Yellow paint splatters */
-.splatter {
-  position: absolute;
-  z-index: 1;
-}
-
-.splatter-1 {
-  width: 260px;
-  top: 5%;
-  left: 5%;
-}
-
-.splatter-2 {
-  width: 180px;
-  top: -5%;
-  right: 0;
-}
-
-.splatter-3 {
-  width: 130px;
-  bottom: 5%;
-  right: 15%;
-}
-
-/* Chocolate drips */
-.chocolate-drips {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  z-index: 3;
-}
-
-/* Granola crumbles */
-.crumbles {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  z-index: 4;
-}
-
-/* Bar wrapper — tilted */
-.bar-wrapper {
-  position: relative;
-  z-index: 5;
-  transform: rotate(-18deg);
-}
-
-.bar-illustration {
-  width: 300px;
-  height: auto;
-  filter: drop-shadow(4px 8px 16px rgba(0,0,0,0.2));
 }
 
 /* --- Why Fibi Section --- */
 .why-section {
-  padding: 50px 0 70px;
+  padding: 60px 0 80px;
 }
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--blue);
-  margin-bottom: 28px;
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: var(--klein-blue);
+  margin-bottom: 36px;
+  text-shadow: 2px 2px 8px rgba(168, 213, 162, 0.8);
 }
 
-/* 2x2 grid layout for benefits */
+/* 2x2 grid */
 .benefits-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 40px;
+  gap: 28px 50px;
 }
 
 .benefit-item {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--dark);
+  font-size: 1.5rem;
+  color: var(--klein-blue);
+  text-shadow: 1px 1px 4px rgba(168, 213, 162, 0.6);
 }
 
 .check-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--check-green);
   color: var(--white);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 700;
   flex-shrink: 0;
 }
 
 /* --- Footer --- */
 .footer {
-  padding: 50px 0 36px;
+  padding: 60px 0 40px;
   text-align: center;
 }
 
@@ -295,22 +312,26 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .footer-brand {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--dark);
+  color: var(--klein-blue);
 }
 
 .footer-copy {
-  font-size: 0.85rem;
-  color: var(--dark-mid);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--klein-blue);
+  opacity: 0.7;
 }
 
-/* --- Responsive --- */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -320,54 +341,59 @@ a {
     right: 0;
     background: var(--green-bg);
     flex-direction: column;
-    padding: 20px 28px;
+    padding: 20px 32px;
     gap: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 200;
   }
 
   .nav-links.active { display: flex; }
   .mobile-toggle { display: flex; }
 
-  .hero { padding: 30px 0 50px; }
+  .hero-title { font-size: 3.4rem; }
+  .hero-description { font-size: 1.3rem; }
 
-  .hero-container {
-    flex-direction: column;
-    gap: 32px;
-    text-align: center;
+  .giant-bar {
+    width: 95vw;
+    transform: rotate(-8deg) translateY(10%);
   }
 
-  .hero-content { max-width: 100%; }
-  .hero-title { font-size: 2.3rem; }
-  .hero-visual { min-height: 300px; }
+  .peanut-1 { width: 240px; }
+  .peanut-2 { width: 260px; }
+  .peanut-3 { width: 200px; }
+  .peanut-4 { width: 190px; }
 
-  .splatter-1 { width: 200px; }
-  .splatter-2 { width: 140px; }
-  .splatter-3 { width: 100px; }
-
-  .bar-illustration { width: 240px; }
-  .chocolate-drips { width: 220px; }
-  .crumbles { width: 220px; }
-
-  .section-title { font-size: 1.8rem; }
+  .section-title { font-size: 2.8rem; }
 
   .benefits-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 16px 24px;
+    gap: 20px 30px;
   }
+
+  .benefit-item { font-size: 1.3rem; }
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: 1.9rem; }
-  .section-title { font-size: 1.5rem; }
-  .bar-illustration { width: 200px; }
-  .chocolate-drips { width: 180px; }
-  .crumbles { width: 180px; }
-  .splatter-1 { width: 160px; }
-  .splatter-2 { width: 110px; }
-  .splatter-3 { width: 80px; }
+  .hero-title { font-size: 2.6rem; }
+  .hero-description { font-size: 1.15rem; }
+  .section-title { font-size: 2.2rem; }
+  .nav-logo { font-size: 2.4rem; }
+
+  .giant-bar {
+    width: 100vw;
+    transform: rotate(-6deg) translateY(12%);
+  }
+
+  .peanut-1 { width: 180px; }
+  .peanut-2 { width: 200px; }
+  .peanut-3 { width: 160px; }
+  .peanut-4 { width: 150px; }
 
   .benefits-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
+
+  .benefit-item { font-size: 1.2rem; }
+  .btn { font-size: 1.2rem; padding: 12px 36px; }
 }

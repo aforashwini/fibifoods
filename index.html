@@ -3,189 +3,296 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fibi Foods — Real Ingredients, Real Fiber</title>
+  <title>Fibi Foods — High-Fiber Snack Bars Made From Real Plants</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'fibi-green': '#A4D67E',
-            'fibi-blue': '#102E96',
-            'fibi-yellow': '#FDF485',
-            'fibi-cream': '#FEFEFE',
-            'fibi-nav': '#F0F7E6',
-            'fibi-sub': '#E6F0C0',
+            brand:   '#2D6A4F',
+            'brand-dark': '#1B4332',
+            accent:  '#D4A373',
+            'accent-light': '#FAEDCD',
+            warm:    '#FEFAE0',
+            dark:    '#1C1917',
+            muted:   '#57534E',
           },
           fontFamily: {
-            marker: ['"Permanent Marker"', 'cursive'],
-            hand: ['"Patrick Hand"', 'cursive'],
-            amatic: ['"Amatic SC"', 'cursive'],
+            serif: ['"DM Serif Display"', 'serif'],
+            sans:  ['"DM Sans"', 'sans-serif'],
           },
         },
       },
     }
   </script>
 
-  <!-- React 18 CDN -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 
-<!-- Phase 1: Full-viewport light green background -->
-<body class="m-0 p-0 bg-fibi-green min-h-screen">
-  <div id="root"></div>
+<body class="font-sans text-dark bg-white">
 
-  <script type="text/babel">
-    function App() {
-      return (
-        // Full viewport green background
-        <div className="min-h-screen bg-fibi-green">
-          {/* Centered mobile-poster container */}
-          <div className="max-w-lg mx-auto relative">
+  <!-- Navigation -->
+  <header class="fixed top-0 inset-x-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#" class="font-serif text-2xl text-brand-dark tracking-tight">Fibi Foods</a>
+      <div class="hidden sm:flex items-center gap-8">
+        <a href="#about" class="text-sm font-medium text-muted hover:text-brand transition">About</a>
+        <a href="#products" class="text-sm font-medium text-muted hover:text-brand transition">Products</a>
+        <a href="#why" class="text-sm font-medium text-muted hover:text-brand transition">Why Fibi</a>
+        <a href="#story" class="text-sm font-medium text-muted hover:text-brand transition">Our Story</a>
+        <a href="#shop" class="bg-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-brand-dark transition">Shop Now</a>
+      </div>
+      <!-- Mobile hamburger placeholder -->
+      <button class="sm:hidden text-dark" id="mobile-toggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+  </header>
 
-            {/* ========== PHASE 2: HEADER & HERO ========== */}
+  <!-- Hero -->
+  <section class="pt-28 pb-20 sm:pt-36 sm:pb-28 bg-warm">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-brand/10 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Plant-Powered Fiber Bars</span>
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-dark leading-tight mb-6">
+          Real Ingredients.<br>Real Fiber.<br>Really Good.
+        </h1>
+        <p class="text-lg text-muted max-w-md mb-8 leading-relaxed">
+          Fibi Foods makes high-fiber snack bars from whole, plant-based ingredients you can actually pronounce. No fillers. No artificial sweeteners. Just honest food that keeps you going.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#shop" class="bg-brand text-white font-semibold px-8 py-3.5 rounded-full hover:bg-brand-dark transition shadow-lg shadow-brand/20">Shop All Bars</a>
+          <a href="#about" class="border-2 border-brand text-brand font-semibold px-8 py-3.5 rounded-full hover:bg-brand hover:text-white transition">Learn More</a>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <img
+          src="Gemini_Generated_Image_xlavofxlavofxlav.png"
+          alt="Fibi Bar — a fiber-rich granola bar in a natural wrapper"
+          class="w-72 sm:w-80 lg:w-96 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    </div>
+  </section>
 
-            {/* Navigation */}
-            <nav className="flex justify-between items-center p-6">
-              {/* Logo — 'f' drops lower via inline style */}
-              <a href="#" className="font-marker text-3xl text-fibi-blue">
-                <span style={{position:'relative', top:'3px'}}>f</span>ibifoods
-              </a>
-              {/* Nav links */}
-              <div className="flex space-x-4">
-                <a href="#" className="font-hand text-xl text-fibi-nav hover:opacity-80">Home</a>
-                <a href="#about" className="font-hand text-xl text-fibi-nav hover:opacity-80">About</a>
-                <a href="#shop" className="font-hand text-xl text-fibi-nav hover:opacity-80">Shop</a>
-                <a href="#contact" className="font-hand text-xl text-fibi-nav hover:opacity-80">Contact</a>
-              </div>
-            </nav>
+  <!-- Stat Band -->
+  <section class="bg-brand text-white py-12">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <p class="font-serif text-3xl sm:text-4xl mb-1">12g</p>
+        <p class="text-sm text-white/70">Fiber per bar</p>
+      </div>
+      <div>
+        <p class="font-serif text-3xl sm:text-4xl mb-1">100%</p>
+        <p class="text-sm text-white/70">Plant-based</p>
+      </div>
+      <div>
+        <p class="font-serif text-3xl sm:text-4xl mb-1">5</p>
+        <p class="text-sm text-white/70">Simple ingredients</p>
+      </div>
+      <div>
+        <p class="font-serif text-3xl sm:text-4xl mb-1">0g</p>
+        <p class="text-sm text-white/70">Added sugar</p>
+      </div>
+    </div>
+  </section>
 
-            {/* Hero Section */}
-            <section className="relative px-6 pt-8 pb-16 overflow-visible">
+  <!-- About -->
+  <section id="about" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <span class="inline-block bg-accent-light text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">About Fibi</span>
+      <h2 class="font-serif text-3xl sm:text-4xl text-dark mb-6">Fiber Shouldn't Be Complicated</h2>
+      <p class="text-muted text-lg leading-relaxed mb-6">
+        Most Americans get only half the fiber they need each day. We started Fibi Foods because we believe closing that gap shouldn't mean choking down a chalky supplement or decoding a 30-ingredient label.
+      </p>
+      <p class="text-muted text-lg leading-relaxed">
+        Every Fibi bar is built around a short list of whole, plant-based foods — oats, dates, nuts, seeds, and real fruit. That's it. We use chicory root fiber and psyllium husk to hit 12 grams per bar, so you get nearly half your daily value in one delicious snack. No protein isolates, no sugar alcohols, no mystery gums.
+      </p>
+    </div>
+  </section>
 
-              {/* Yellow blob — absolute, behind everything */}
-              <div className="absolute -top-10 -left-8 -right-8 bottom-0 z-0 pointer-events-none">
-                <svg viewBox="0 0 500 450" className="w-full h-full" preserveAspectRatio="none">
-                  <path
-                    d="M60 80 C20 120 -10 200 30 280 C50 320 80 370 150 400 C220 430 300 420 370 380 C430 345 480 280 470 210 C460 140 420 90 370 60 C310 25 230 10 170 20 C120 28 90 50 60 80Z"
-                    fill="#FDF485"
-                  />
-                </svg>
-              </div>
+  <!-- Products -->
+  <section id="products" class="py-20 sm:py-28 bg-warm">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="inline-block bg-brand/10 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Our Lineup</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-dark">Pick Your Flavor</h2>
+      </div>
 
-              {/* Hero content — sits above blob */}
-              <div className="relative z-10">
-                {/* Main Headline */}
-                <h1 className="font-marker text-fibi-blue text-5xl sm:text-6xl leading-tight mb-5 text-left">
-                  Fibi Foods:<br/>Real Ingredients,<br/>Real Fiber.
-                </h1>
-
-                {/* Sub-headline */}
-                <p className="font-hand text-fibi-yellow text-2xl mb-8 text-left">
-                  Fiber bars that actually taste good.<br/>No fake stuff. Just plants.
-                </p>
-
-                {/* CTA Button — hand-drawn feel, slight rotation */}
-                <a
-                  href="#shop"
-                  className="inline-block font-hand text-xl text-fibi-blue bg-fibi-yellow px-8 py-3 rounded-tl-lg rounded-br-2xl rounded-tr-md rounded-bl-md shadow-md hover:shadow-lg transition-all"
-                  style={{transform: 'rotate(-2deg)'}}
-                >
-                  Shop Now
-                </a>
-              </div>
-
-              {/* Product image — photorealistic bar, overlapping blob */}
-              <div className="absolute -right-4 top-6 z-20 w-56 sm:w-64">
-                <img
-                  src="Gemini_Generated_Image_xlavofxlavofxlav.png"
-                  alt="Fibi Bar — a fiber-rich granola bar in a lavender wrapper with chocolate dripping"
-                  className="w-full h-auto drop-shadow-2xl"
-                  style={{transform: 'rotate(-15deg)'}}
-                />
-              </div>
-
-            </section>
-
-            {/* ========== END PHASE 2 ========== */}
-
-            {/* ========== PHASE 3: WHY FIBI & FOOTER ========== */}
-
-            {/* Why Fibi? Section */}
-            <section id="about" className="px-6">
-              <h2 className="font-marker text-fibi-blue text-5xl mt-12 mb-6">
-                Why Fibi?
-              </h2>
-
-              {/* 2x2 Feature Grid */}
-              <div className="grid grid-cols-2 gap-5">
-                {/* Peanut SVG icon component — yellow, tilted 45deg */}
-                {[
-                  'High Fiber',
-                  'Delicious',
-                  'Plant-Based',
-                  'No Weird Ingredients',
-                ].map((item) => (
-                  <div key={item} className="flex flex-row items-center gap-3">
-                    {/* Peanut icon */}
-                    <svg width="36" height="36" viewBox="0 0 60 60" className="shrink-0" style={{transform: 'rotate(45deg)'}}>
-                      <path
-                        d="M18 30 C18 18 22 10 30 10 C34 10 36 14 37 18 C38 14 40 10 44 10 C52 10 56 18 56 30 C56 42 52 50 44 50 C40 50 38 46 37 42 C36 46 34 50 30 50 C22 50 18 42 18 30Z"
-                        fill="#FDF485"
-                      />
-                    </svg>
-                    <span className="font-hand text-fibi-nav text-2xl sm:text-3xl">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Footer */}
-            <footer id="contact" className="relative px-6 mt-16 pb-10">
-              {/* Subtle divider */}
-              <div className="border-t border-white/20 mb-8"></div>
-
-              {/* Brand */}
-              <p className="font-marker text-fibi-blue text-2xl text-center mb-2">
-                Fibi Foods
-              </p>
-
-              {/* Copyright */}
-              <p className="font-hand text-fibi-yellow text-sm text-center">
-                &copy; 2024 Fibi Foods. All rights reserved.
-              </p>
-
-              {/* Sparkle star — bottom right */}
-              <svg
-                className="absolute bottom-4 right-4 w-10 h-10 opacity-40"
-                viewBox="0 0 40 40"
-                fill="none"
-              >
-                <path
-                  d="M20 0 L23 15 L40 20 L23 25 L20 40 L17 25 L0 20 L17 15 Z"
-                  fill="white"
-                />
-              </svg>
-            </footer>
-
-            {/* ========== END PHASE 3 ========== */}
-
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Product 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition group">
+          <div class="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mb-6 text-3xl">🍫</div>
+          <h3 class="font-serif text-xl mb-2">Cocoa Almond Crunch</h3>
+          <p class="text-muted text-sm leading-relaxed mb-4">Rich dark cocoa with roasted almonds and a hint of vanilla. Our bestseller — tastes like a brownie, works like fiber.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-brand font-semibold">$2.99 / bar</span>
+            <span class="text-xs text-muted bg-gray-100 px-2 py-1 rounded-full">12g fiber</span>
           </div>
         </div>
-      );
-    }
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-  </script>
+        <!-- Product 2 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition group">
+          <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 text-3xl">🍌</div>
+          <h3 class="font-serif text-xl mb-2">Banana Peanut Butter</h3>
+          <p class="text-muted text-sm leading-relaxed mb-4">Creamy peanut butter swirled with real banana and flax. Smooth, satisfying, and perfect for the afternoon slump.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-brand font-semibold">$2.99 / bar</span>
+            <span class="text-xs text-muted bg-gray-100 px-2 py-1 rounded-full">12g fiber</span>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition group">
+          <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6 text-3xl">🍓</div>
+          <h3 class="font-serif text-xl mb-2">Strawberry Oat</h3>
+          <p class="text-muted text-sm leading-relaxed mb-4">Freeze-dried strawberries folded into buttery oats and chia seeds. Bright, fruity, and naturally pink.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-brand font-semibold">$2.99 / bar</span>
+            <span class="text-xs text-muted bg-gray-100 px-2 py-1 rounded-full">12g fiber</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#shop" class="inline-block bg-brand text-white font-semibold px-8 py-3.5 rounded-full hover:bg-brand-dark transition">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Fibi -->
+  <section id="why" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="inline-block bg-accent-light text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">The Difference</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-dark">Why People Choose Fibi</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-dark mb-2">High Fiber</h3>
+          <p class="text-sm text-muted leading-relaxed">12 grams of fiber from whole-food sources in every single bar — nearly half your daily value.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-dark mb-2">Actually Delicious</h3>
+          <p class="text-sm text-muted leading-relaxed">Developed with a pastry chef. These taste like treats, not health food obligations.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-dark mb-2">100% Plant-Based</h3>
+          <p class="text-sm text-muted leading-relaxed">Vegan, dairy-free, and made entirely from plants. Good for you, lighter on the planet.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <h3 class="font-semibold text-dark mb-2">Clean Label</h3>
+          <p class="text-sm text-muted leading-relaxed">Five to seven ingredients, max. No gums, no sugar alcohols, nothing you can't find in a grocery store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section id="story" class="py-20 sm:py-28 bg-accent-light">
+    <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-white text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Our Story</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-dark mb-6">Born in a Kitchen, Built on a Mission</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Fibi started in 2023 when our founder — a nutritionist and lifelong snack skeptic — couldn't find a single fiber bar that didn't taste like cardboard or come loaded with ingredients she'd never recommend to a client.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          So she made her own. The first batch sold out at a local farmers' market in under an hour. Neighbors started placing weekly orders. The rest, as they say, is fiber history.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Today, Fibi Foods is still made in small batches with the same real-food philosophy: if it doesn't belong in your body, it doesn't belong in our bars.
+        </p>
+      </div>
+      <div class="bg-white rounded-2xl p-10 shadow-sm">
+        <blockquote class="font-serif text-xl text-dark italic leading-relaxed mb-4">
+          "I wanted to make the bar I wished existed — something I'd actually look forward to eating, not just tolerate for the fiber."
+        </blockquote>
+        <p class="text-sm text-muted">— Ashwini, Founder of Fibi Foods</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section id="shop" class="py-20 sm:py-28 bg-brand-dark text-white text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="font-serif text-3xl sm:text-4xl mb-4">Ready to Try Fibi?</h2>
+      <p class="text-white/70 text-lg mb-8">Start with our Sampler Pack — three flavors, six bars, one happy gut. Free shipping on your first order.</p>
+      <a href="#" class="inline-block bg-white text-brand-dark font-semibold px-10 py-4 rounded-full hover:bg-accent-light transition shadow-lg">Order the Sampler — $14.99</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white/60 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <!-- Col 1 -->
+        <div>
+          <p class="font-serif text-xl text-white mb-4">Fibi Foods</p>
+          <p class="text-sm leading-relaxed">High-fiber snack bars made from real, plant-based ingredients. Founded in 2023.</p>
+        </div>
+        <!-- Col 2 -->
+        <div>
+          <p class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Shop</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">All Bars</a></li>
+            <li><a href="#" class="hover:text-white transition">Sampler Pack</a></li>
+            <li><a href="#" class="hover:text-white transition">Subscribe & Save</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <p class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Company</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+            <li><a href="#story" class="hover:text-white transition">Our Story</a></li>
+            <li><a href="#" class="hover:text-white transition">Nutrition Facts</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div>
+          <p class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Connect</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Instagram</a></li>
+            <li><a href="#" class="hover:text-white transition">TikTok</a></li>
+            <li><a href="mailto:hello@fibifoods.com" class="hover:text-white transition">hello@fibifoods.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs">&copy; 2024 Fibi Foods. All rights reserved.</p>
+        <div class="flex gap-6 text-xs">
+          <a href="#" class="hover:text-white transition">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

@@ -1,298 +1,892 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fibi Foods — High-Fiber Snack Bars Made From Real Plants</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wandering Roots — Affordable Vegan Group Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand:   '#2D6A4F',
-            'brand-dark': '#1B4332',
-            accent:  '#D4A373',
-            'accent-light': '#FAEDCD',
-            warm:    '#FEFAE0',
-            dark:    '#1C1917',
-            muted:   '#57534E',
+            forest:  '#2D6A4F',
+            'forest-dark': '#1B4332',
+            'forest-light': '#52B788',
+            terra:   '#C1694F',
+            'terra-light': '#E8967E',
+            gold:    '#E9C46A',
+            'gold-light': '#F4D58D',
+            cream:   '#FEFAE0',
+            'cream-dark': '#F0E6C0',
+            bark:    '#3D2B1F',
           },
           fontFamily: {
-            serif: ['"DM Serif Display"', 'serif'],
-            sans:  ['"DM Sans"', 'sans-serif'],
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans:  ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
           },
         },
       },
-    }
+    };
   </script>
-
   <style>
     html { scroll-behavior: smooth; }
+
+    /* ── Decorative leaf SVG ── */
+    .leaf-bg {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%232D6A4F' opacity='.12'/%3E%3C/svg%3E");
+    }
+
+    /* ── Hero gradient overlay ── */
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(27,67,50,0.82) 0%, rgba(45,106,79,0.55) 60%, rgba(233,196,106,0.18) 100%);
+    }
+
+    /* ── Card hover lift ── */
+    .card-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(27,67,50,0.18); }
+
+    /* ── Mobile nav toggle ── */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
   </style>
 </head>
+<body class="font-sans text-bark bg-cream antialiased">
 
-<body class="font-sans text-dark bg-white">
+  <!-- ═══════════════════════════════════════════ NAVBAR ═══ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="text-2xl">🌿</span>
+        <span class="font-serif font-semibold text-xl text-cream group-hover:text-gold transition-colors">
+          Wandering<span class="text-gold">Roots</span>
+        </span>
+      </a>
 
-  <!-- Navigation -->
-  <header class="fixed top-0 inset-x-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
-    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-      <a href="#" class="font-serif text-2xl text-brand-dark tracking-tight">Fibi Foods</a>
-      <div class="hidden sm:flex items-center gap-8">
-        <a href="#about" class="text-sm font-medium text-muted hover:text-brand transition">About</a>
-        <a href="#products" class="text-sm font-medium text-muted hover:text-brand transition">Products</a>
-        <a href="#why" class="text-sm font-medium text-muted hover:text-brand transition">Why Fibi</a>
-        <a href="#story" class="text-sm font-medium text-muted hover:text-brand transition">Our Story</a>
-        <a href="#shop" class="bg-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-brand-dark transition">Shop Now</a>
-      </div>
-      <!-- Mobile hamburger placeholder -->
-      <button class="sm:hidden text-dark" id="mobile-toggle">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-cream/90">
+        <li><a href="#trips" class="hover:text-gold transition-colors">Trips</a></li>
+        <li><a href="#why-us" class="hover:text-gold transition-colors">Why Us</a></li>
+        <li><a href="#how-it-works" class="hover:text-gold transition-colors">How It Works</a></li>
+        <li><a href="#testimonials" class="hover:text-gold transition-colors">Stories</a></li>
+        <li>
+          <a href="#newsletter"
+             class="bg-gold text-bark px-5 py-2 rounded-full font-semibold hover:bg-gold-light transition-colors">
+            Join a Trip
+          </a>
+        </li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button id="hamburger" class="md:hidden text-cream focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
       </button>
     </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu"
+         class="flex-col md:hidden bg-forest-dark/95 backdrop-blur-md px-6 pb-6 gap-4 text-cream font-medium text-base">
+      <a href="#trips"        class="hover:text-gold transition-colors py-1" onclick="closeMobile()">Trips</a>
+      <a href="#why-us"       class="hover:text-gold transition-colors py-1" onclick="closeMobile()">Why Us</a>
+      <a href="#how-it-works" class="hover:text-gold transition-colors py-1" onclick="closeMobile()">How It Works</a>
+      <a href="#testimonials" class="hover:text-gold transition-colors py-1" onclick="closeMobile()">Stories</a>
+      <a href="#newsletter"
+         class="bg-gold text-bark px-5 py-2 rounded-full font-semibold text-center hover:bg-gold-light transition-colors"
+         onclick="closeMobile()">Join a Trip</a>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="pt-28 pb-20 sm:pt-36 sm:pb-28 bg-warm">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+  <!-- ═══════════════════════════════════════════ HERO ══════ -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-forest-dark">
+
+    <!-- Decorative illustrated landscape (pure CSS + SVG) -->
+    <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- Sky gradient -->
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#0f3d28"/>
+          <stop offset="100%" stop-color="#2D6A4F"/>
+        </linearGradient>
+        <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#F4D58D"/>
+          <stop offset="100%" stop-color="#E9C46A"/>
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#sky)"/>
+
+      <!-- Sun glow -->
+      <circle cx="75%" cy="28%" r="120" fill="#E9C46A" opacity="0.09"/>
+      <circle cx="75%" cy="28%" r="70"  fill="#E9C46A" opacity="0.12"/>
+      <circle cx="75%" cy="28%" r="40"  fill="url(#sun)" opacity="0.55"/>
+
+      <!-- Mountains -->
+      <polygon points="0,650 300,220 580,640" fill="#1B4332" opacity="0.8"/>
+      <polygon points="200,650 550,180 870,650" fill="#245D3E" opacity="0.7"/>
+      <polygon points="500,650 800,260 1100,650" fill="#2D6A4F" opacity="0.6"/>
+      <polygon points="750,650 1050,300 1400,650" fill="#1B4332" opacity="0.75"/>
+      <polygon points="1100,650 1350,350 1600,650" fill="#245D3E" opacity="0.65"/>
+
+      <!-- Foreground hill -->
+      <ellipse cx="50%" cy="105%" rx="70%" ry="35%" fill="#1B4332"/>
+
+      <!-- Trees silhouette left -->
+      <g fill="#14362A" opacity="0.9">
+        <polygon points="60,650 80,480 100,650"/>
+        <polygon points="120,650 145,460 170,650"/>
+        <polygon points="30,650 55,510 80,650"/>
+      </g>
+      <!-- Trees silhouette right -->
+      <g fill="#14362A" opacity="0.9">
+        <polygon points="1480,650 1500,490 1520,650"/>
+        <polygon points="1520,650 1548,470 1576,650"/>
+        <polygon points="1440,650 1465,515 1490,650"/>
+      </g>
+
+      <!-- Stars -->
+      <g fill="#FEFAE0" opacity="0.5">
+        <circle cx="10%"  cy="12%" r="1.5"/>
+        <circle cx="18%"  cy="8%"  r="1"/>
+        <circle cx="28%"  cy="15%" r="1.2"/>
+        <circle cx="42%"  cy="6%"  r="1"/>
+        <circle cx="55%"  cy="10%" r="1.5"/>
+        <circle cx="63%"  cy="5%"  r="1"/>
+        <circle cx="85%"  cy="9%"  r="1.2"/>
+        <circle cx="92%"  cy="14%" r="1"/>
+      </g>
+    </svg>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-24">
+      <span class="inline-block bg-forest-light/20 border border-forest-light/40 text-forest-light text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+        🌱 100% Plant-Based Journeys
+      </span>
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-cream leading-tight mb-6">
+        See the World.<br/>
+        <em class="text-gold not-italic">Eat Well. Save More.</em>
+      </h1>
+      <p class="text-cream/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Wandering Roots organises affordable group adventures for plant-based travellers.
+        Handpicked vegan-friendly destinations, curated local food experiences, and the best
+        company money can't buy — all at prices that won't break the bank.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#trips"
+           class="bg-gold text-bark font-semibold px-8 py-4 rounded-full text-base hover:bg-gold-light transition-all shadow-lg hover:shadow-xl">
+          Browse Upcoming Trips
+        </a>
+        <a href="#how-it-works"
+           class="border border-cream/50 text-cream font-semibold px-8 py-4 rounded-full text-base hover:bg-cream/10 transition-all">
+          How It Works
+        </a>
+      </div>
+
+      <!-- Quick trust badges -->
+      <div class="flex flex-wrap gap-6 justify-center mt-14 text-cream/70 text-sm">
+        <div class="flex items-center gap-2"><span>✓</span> No hidden fees</div>
+        <div class="flex items-center gap-2"><span>✓</span> Groups of 8–20 people</div>
+        <div class="flex items-center gap-2"><span>✓</span> Flexible deposits</div>
+        <div class="flex items-center gap-2"><span>✓</span> 100% vegan itineraries</div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <a href="#stats"
+       class="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/50 hover:text-gold transition-colors animate-bounce"
+       aria-label="Scroll down">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ STATS ═════ -->
+  <section id="stats" class="bg-forest py-14">
+    <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div>
-        <span class="inline-block bg-brand/10 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Plant-Powered Fiber Bars</span>
-        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-dark leading-tight mb-6">
-          Real Ingredients.<br>Real Fiber.<br>Really Good.
-        </h1>
-        <p class="text-lg text-muted max-w-md mb-8 leading-relaxed">
-          Fibi Foods makes high-fiber snack bars from whole, plant-based ingredients you can actually pronounce. No fillers. No artificial sweeteners. Just honest food that keeps you going.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#shop" class="bg-brand text-white font-semibold px-8 py-3.5 rounded-full hover:bg-brand-dark transition shadow-lg shadow-brand/20">Shop All Bars</a>
-          <a href="#about" class="border-2 border-brand text-brand font-semibold px-8 py-3.5 rounded-full hover:bg-brand hover:text-white transition">Learn More</a>
+        <p class="font-serif text-4xl font-bold text-gold">4,200+</p>
+        <p class="text-cream/80 text-sm mt-1 font-medium">Happy Travellers</p>
+      </div>
+      <div>
+        <p class="font-serif text-4xl font-bold text-gold">38</p>
+        <p class="text-cream/80 text-sm mt-1 font-medium">Destinations</p>
+      </div>
+      <div>
+        <p class="font-serif text-4xl font-bold text-gold">$890</p>
+        <p class="text-cream/80 text-sm mt-1 font-medium">Avg. Trip Cost</p>
+      </div>
+      <div>
+        <p class="font-serif text-4xl font-bold text-gold">98%</p>
+        <p class="text-cream/80 text-sm mt-1 font-medium">Would Rebook</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WHY US ════ -->
+  <section id="why-us" class="py-24 leaf-bg bg-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-forest font-semibold text-sm tracking-widest uppercase">Why Wandering Roots</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-forest-dark mt-2">
+          Travel that aligns with<br/><em>your values</em>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm card-lift border border-cream-dark">
+          <div class="w-14 h-14 bg-forest/10 rounded-2xl flex items-center justify-center text-3xl mb-5">🥗</div>
+          <h3 class="font-serif text-xl font-bold text-forest-dark mb-3">Fully Vegan Itineraries</h3>
+          <p class="text-bark/70 leading-relaxed text-sm">
+            Every meal, every café, every market visit is vetted by our plant-based food scouts. No awkward "can you hold the cheese?" moments.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm card-lift border border-cream-dark">
+          <div class="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center text-3xl mb-5">💰</div>
+          <h3 class="font-serif text-xl font-bold text-forest-dark mb-3">Genuinely Affordable</h3>
+          <p class="text-bark/70 leading-relaxed text-sm">
+            Group buying power means you pay less. We negotiate bulk rates on transport, accommodation, and experiences and pass every saving straight to you.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm card-lift border border-cream-dark">
+          <div class="w-14 h-14 bg-terra/10 rounded-2xl flex items-center justify-center text-3xl mb-5">🤝</div>
+          <h3 class="font-serif text-xl font-bold text-forest-dark mb-3">Community-First</h3>
+          <p class="text-bark/70 leading-relaxed text-sm">
+            Travel with like-minded people who share your lifestyle. Our groups are small enough to feel personal, big enough to share costs.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm card-lift border border-cream-dark">
+          <div class="w-14 h-14 bg-forest/10 rounded-2xl flex items-center justify-center text-3xl mb-5">🌍</div>
+          <h3 class="font-serif text-xl font-bold text-forest-dark mb-3">Low-Impact Travel</h3>
+          <p class="text-bark/70 leading-relaxed text-sm">
+            We offset every trip's carbon footprint, favour slow travel over flying when possible, and partner with locally owned eco-stays.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm card-lift border border-cream-dark">
+          <div class="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center text-3xl mb-5">🗺️</div>
+          <h3 class="font-serif text-xl font-bold text-forest-dark mb-3">Expert Local Guides</h3>
+          <p class="text-bark/70 leading-relaxed text-sm">
+            Our guides are plant-based locals who know the hidden gems — the best street food stall, the community farm, the vegan hot spring retreat.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm card-lift border border-cream-dark">
+          <div class="w-14 h-14 bg-terra/10 rounded-2xl flex items-center justify-center text-3xl mb-5">📆</div>
+          <h3 class="font-serif text-xl font-bold text-forest-dark mb-3">Flexible Booking</h3>
+          <p class="text-bark/70 leading-relaxed text-sm">
+            Secure your spot with a small deposit. Pay the rest in easy instalments. Free cancellation up to 60 days before departure.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ TRIPS ═════ -->
+  <section id="trips" class="py-24 bg-forest-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-forest-light font-semibold text-sm tracking-widest uppercase">Upcoming Departures</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-cream mt-2">
+          Find your next<br/><em class="text-gold">adventure</em>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Trip 1 — Bali -->
+        <div class="bg-forest/40 border border-forest-light/20 rounded-3xl overflow-hidden card-lift">
+          <!-- Illustrated header -->
+          <div class="relative h-44 bg-gradient-to-br from-[#1B4332] to-[#52B788] flex items-end p-5">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 380 176" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#245D3E"/><stop offset="100%" stop-color="#52B788"/></linearGradient></defs>
+              <rect width="380" height="176" fill="url(#g1)"/>
+              <!-- Rice terraces -->
+              <ellipse cx="190" cy="200" rx="250" ry="80" fill="#1B4332" opacity="0.6"/>
+              <ellipse cx="190" cy="185" rx="220" ry="65" fill="#2D6A4F" opacity="0.5"/>
+              <ellipse cx="190" cy="165" rx="190" ry="50" fill="#1B4332" opacity="0.4"/>
+              <!-- Temple silhouette -->
+              <rect x="155" y="80" width="70" height="80" fill="#14362A"/>
+              <polygon points="155,80 190,35 225,80" fill="#14362A"/>
+              <polygon points="163,80 190,48 217,80" fill="#245D3E"/>
+              <rect x="175" y="120" width="30" height="40" fill="#245D3E"/>
+              <!-- Palm -->
+              <line x1="310" y1="176" x2="310" y2="60" stroke="#1B4332" stroke-width="4"/>
+              <ellipse cx="310" cy="58" rx="28" ry="12" fill="#1B4332" transform="rotate(-20,310,58)"/>
+              <ellipse cx="310" cy="58" rx="26" ry="10" fill="#245D3E" transform="rotate(15,310,58)"/>
+              <ellipse cx="310" cy="58" rx="24" ry="9"  fill="#1B4332" transform="rotate(-40,310,58)"/>
+            </svg>
+            <span class="relative z-10 bg-gold text-bark text-xs font-bold px-3 py-1 rounded-full">From $749</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-cream">Bali, Indonesia</h3>
+                <p class="text-forest-light text-sm font-medium">Rice terraces & jungle retreats</p>
+              </div>
+              <span class="text-cream/50 text-xs mt-1">10 days</span>
+            </div>
+            <p class="text-cream/70 text-sm leading-relaxed mb-5">
+              Cooking classes in Ubud, sunrise yoga on Tegalalang, visits to organic farms, and an all-vegan beach banquet in Seminyak.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🍚 Farm dinners</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🧘 Yoga</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🌴 Snorkelling</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-cream/50 border-t border-cream/10 pt-4">
+              <span>Next departure: <strong class="text-cream/70">Apr 12, 2026</strong></span>
+              <span>4 spots left</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trip 2 — Portugal -->
+        <div class="bg-forest/40 border border-forest-light/20 rounded-3xl overflow-hidden card-lift">
+          <div class="relative h-44 flex items-end p-5">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 380 176" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B2333"/><stop offset="100%" stop-color="#C1694F"/></linearGradient></defs>
+              <rect width="380" height="176" fill="url(#g2)"/>
+              <!-- Ocean -->
+              <rect x="0" y="120" width="380" height="56" fill="#1a3a5c" opacity="0.7"/>
+              <!-- Cliffs -->
+              <polygon points="0,120 80,50 160,120" fill="#8B3A2B"/>
+              <polygon points="100,120 200,30 300,120" fill="#6B2C20"/>
+              <polygon points="220,120 320,65 380,120" fill="#8B3A2B"/>
+              <!-- Azulejo tile hint -->
+              <rect x="0" y="0" width="380" height="176" fill="#E07A5F" opacity="0.05"/>
+              <!-- Sun -->
+              <circle cx="300" cy="45" r="30" fill="#F4D58D" opacity="0.7"/>
+            </svg>
+            <span class="relative z-10 bg-gold text-bark text-xs font-bold px-3 py-1 rounded-full">From $820</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-cream">Algarve, Portugal</h3>
+                <p class="text-forest-light text-sm font-medium">Coastal villages & wine country</p>
+              </div>
+              <span class="text-cream/50 text-xs mt-1">8 days</span>
+            </div>
+            <p class="text-cream/70 text-sm leading-relaxed mb-5">
+              Explore cliff-top trails, dine at Portugal's best vegan tabernas, tour an organic olive grove, and spend a night in a finca under the stars.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🍷 Wine tasting</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🏖️ Beach hikes</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🫒 Olive farm</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-cream/50 border-t border-cream/10 pt-4">
+              <span>Next departure: <strong class="text-cream/70">May 3, 2026</strong></span>
+              <span>8 spots left</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trip 3 — Japan -->
+        <div class="bg-forest/40 border border-forest-light/20 rounded-3xl overflow-hidden card-lift">
+          <div class="relative h-44 flex items-end p-5">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 380 176" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient></defs>
+              <rect width="380" height="176" fill="url(#g3)"/>
+              <!-- Mt Fuji -->
+              <polygon points="190,20 280,176 100,176" fill="#2a2a4a"/>
+              <polygon points="190,20 220,60 160,60" fill="white" opacity="0.85"/>
+              <!-- Cherry blossoms -->
+              <circle cx="50"  cy="100" r="35" fill="#e8a0b4" opacity="0.7"/>
+              <circle cx="70"  cy="85"  r="28" fill="#f2bdc9" opacity="0.6"/>
+              <circle cx="330" cy="95"  r="32" fill="#e8a0b4" opacity="0.65"/>
+              <circle cx="315" cy="80"  r="25" fill="#f2bdc9" opacity="0.55"/>
+              <!-- Pagoda -->
+              <rect x="165" y="110" width="50" height="66" fill="#1a1a2e"/>
+              <polygon points="152,110 190,90 228,110" fill="#1a1a2e"/>
+              <polygon points="158,90 190,72 222,90" fill="#2a2a4a"/>
+              <polygon points="164,72 190,56 216,72" fill="#1a1a2e"/>
+            </svg>
+            <span class="relative z-10 bg-gold text-bark text-xs font-bold px-3 py-1 rounded-full">From $1,150</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-cream">Kyoto, Japan</h3>
+                <p class="text-forest-light text-sm font-medium">Shojin ryori & bamboo forests</p>
+              </div>
+              <span class="text-cream/50 text-xs mt-1">12 days</span>
+            </div>
+            <p class="text-cream/70 text-sm leading-relaxed mb-5">
+              Learn the art of Buddhist temple cuisine (shojin ryori), walk Arashiyama, visit Nishiki Market's vegan stalls, and soak in mountain hot springs.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🍵 Tea ceremony</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🎋 Arashiyama</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">♨️ Onsen</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-cream/50 border-t border-cream/10 pt-4">
+              <span>Next departure: <strong class="text-cream/70">Oct 8, 2026</strong></span>
+              <span>12 spots left</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trip 4 — Peru -->
+        <div class="bg-forest/40 border border-forest-light/20 rounded-3xl overflow-hidden card-lift">
+          <div class="relative h-44 flex items-end p-5">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 380 176" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="g4" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#2D4A1E"/><stop offset="100%" stop-color="#5A7A2E"/></linearGradient></defs>
+              <rect width="380" height="176" fill="url(#g4)"/>
+              <!-- Inca terraces -->
+              <rect x="0"   y="145" width="380" height="31" fill="#1B3512"/>
+              <rect x="0"   y="120" width="340" height="28" fill="#243D18"/>
+              <rect x="20"  y="97"  width="290" height="26" fill="#1B3512"/>
+              <rect x="50"  y="76"  width="240" height="24" fill="#243D18"/>
+              <rect x="80"  y="57"  width="190" height="22" fill="#1B3512"/>
+              <!-- Machu Picchu buildings -->
+              <rect x="140" y="35"  width="100" height="50" fill="#2D4A1E" opacity="0.8"/>
+              <rect x="155" y="20"  width="70"  height="18" fill="#2D4A1E"/>
+              <rect x="170" y="10"  width="40"  height="12" fill="#3A5C26"/>
+              <!-- Sun disc -->
+              <circle cx="320" cy="30" r="22" fill="#E9C46A" opacity="0.8"/>
+            </svg>
+            <span class="relative z-10 bg-gold text-bark text-xs font-bold px-3 py-1 rounded-full">From $980</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-cream">Cusco & Machu Picchu</h3>
+                <p class="text-forest-light text-sm font-medium">Andean markets & ancient ruins</p>
+              </div>
+              <span class="text-cream/50 text-xs mt-1">11 days</span>
+            </div>
+            <p class="text-cream/70 text-sm leading-relaxed mb-5">
+              Trek the Inca Trail, explore San Pedro Market, cook with local quinoa farmers, and discover Peru's thriving plant-based food scene in Lima.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🏔️ Inca Trail</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🌽 Quinoa farm</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🫙 Lima food tour</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-cream/50 border-t border-cream/10 pt-4">
+              <span>Next departure: <strong class="text-cream/70">Jun 21, 2026</strong></span>
+              <span>6 spots left</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trip 5 — Morocco -->
+        <div class="bg-forest/40 border border-forest-light/20 rounded-3xl overflow-hidden card-lift">
+          <div class="relative h-44 flex items-end p-5">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 380 176" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7B3F00"/><stop offset="100%" stop-color="#C1784F"/></linearGradient></defs>
+              <rect width="380" height="176" fill="url(#g5)"/>
+              <!-- Desert dunes -->
+              <ellipse cx="100" cy="200" rx="200" ry="90" fill="#8B4513" opacity="0.7"/>
+              <ellipse cx="280" cy="195" rx="180" ry="75" fill="#A0522D" opacity="0.6"/>
+              <ellipse cx="190" cy="210" rx="240" ry="100" fill="#7B3F00" opacity="0.5"/>
+              <!-- Riad arch -->
+              <rect x="150" y="50" width="80" height="126" fill="#5C2E00" opacity="0.85"/>
+              <path d="M150,90 Q190,50 230,90" fill="#5C2E00" opacity="0.85"/>
+              <!-- Mosaic hint -->
+              <rect x="160" y="105" width="60" height="70" fill="#3D1C00"/>
+              <circle cx="190" cy="72" r="5" fill="#E9C46A" opacity="0.9"/>
+              <!-- Stars -->
+              <g fill="#FEFAE0" opacity="0.7">
+                <circle cx="40"  cy="25" r="1.5"/>
+                <circle cx="80"  cy="15" r="1"/>
+                <circle cx="320" cy="20" r="1.5"/>
+                <circle cx="350" cy="35" r="1"/>
+              </g>
+            </svg>
+            <span class="relative z-10 bg-gold text-bark text-xs font-bold px-3 py-1 rounded-full">From $695</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-cream">Marrakech, Morocco</h3>
+                <p class="text-forest-light text-sm font-medium">Medinas, spices & Sahara camping</p>
+              </div>
+              <span class="text-cream/50 text-xs mt-1">9 days</span>
+            </div>
+            <p class="text-cream/70 text-sm leading-relaxed mb-5">
+              Wander the spice souks, cook tagines in a riad, overnight in Sahara desert camps, and feast on Moroccan mezze at a rooftop in the medina.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🏜️ Sahara camp</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🫙 Tagine cooking</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🧆 Souk tour</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-cream/50 border-t border-cream/10 pt-4">
+              <span>Next departure: <strong class="text-cream/70">Mar 28, 2026</strong></span>
+              <span>2 spots left</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trip 6 — Costa Rica -->
+        <div class="bg-forest/40 border border-forest-light/20 rounded-3xl overflow-hidden card-lift">
+          <div class="relative h-44 flex items-end p-5">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 380 176" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a3d2e"/><stop offset="100%" stop-color="#1a7a5e"/></linearGradient></defs>
+              <rect width="380" height="176" fill="url(#g6)"/>
+              <!-- Canopy -->
+              <ellipse cx="60"  cy="60"  rx="70" ry="50" fill="#145A38" opacity="0.9"/>
+              <ellipse cx="180" cy="40"  rx="90" ry="60" fill="#0d4a2e" opacity="0.85"/>
+              <ellipse cx="310" cy="55"  rx="75" ry="52" fill="#145A38" opacity="0.9"/>
+              <!-- Waterfall -->
+              <rect x="175" y="80" width="10" height="96" fill="#A8D8EA" opacity="0.5"/>
+              <ellipse cx="180" cy="170" rx="25" ry="8" fill="#A8D8EA" opacity="0.35"/>
+              <!-- Toucan silhouette -->
+              <ellipse cx="320" cy="30" rx="12" ry="9" fill="#1a1a1a"/>
+              <polygon points="332,27 355,30 332,33" fill="#E9C46A"/>
+              <!-- Frog -->
+              <ellipse cx="80" cy="140" rx="8" ry="6" fill="#2ECC71" opacity="0.8"/>
+              <circle  cx="77" cy="136" r="3"   fill="#2ECC71" opacity="0.8"/>
+              <circle  cx="83" cy="136" r="3"   fill="#2ECC71" opacity="0.8"/>
+            </svg>
+            <span class="relative z-10 bg-gold text-bark text-xs font-bold px-3 py-1 rounded-full">From $860</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-cream">Costa Rica</h3>
+                <p class="text-forest-light text-sm font-medium">Rainforest lodges & surf breaks</p>
+              </div>
+              <span class="text-cream/50 text-xs mt-1">10 days</span>
+            </div>
+            <p class="text-cream/70 text-sm leading-relaxed mb-5">
+              Zip-line through the Monteverde cloud forest, kayak Tortuguero canals, visit a cacao plantation, and enjoy fresh tropical bowls at every meal.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🦜 Wildlife hikes</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🏄 Surf lessons</span>
+              <span class="bg-forest/50 text-forest-light text-xs px-3 py-1 rounded-full">🍫 Cacao farm</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-cream/50 border-t border-cream/10 pt-4">
+              <span>Next departure: <strong class="text-cream/70">Jul 5, 2026</strong></span>
+              <span>10 spots left</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center mt-10">
+        <a href="#newsletter"
+           class="inline-block border border-forest-light/50 text-forest-light px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-forest-light/10 transition-all">
+          View all 38 destinations →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ HOW IT WORKS -->
+  <section id="how-it-works" class="py-24 bg-cream-dark">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-forest font-semibold text-sm tracking-widest uppercase">Simple Process</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-forest-dark mt-2">
+          From dreaming to<br/><em>departure in 3 steps</em>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-forest flex items-center justify-center text-3xl mx-auto mb-6 shadow-lg">🔍</div>
+          <div class="text-forest font-bold text-xs tracking-widest uppercase mb-2">Step 01</div>
+          <h3 class="font-serif text-2xl font-bold text-forest-dark mb-3">Pick Your Trip</h3>
+          <p class="text-bark/70 text-sm leading-relaxed">
+            Browse upcoming departures, filter by budget, region, or length. Each listing includes a full itinerary, sample menu, and accommodation details.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-terra flex items-center justify-center text-3xl mx-auto mb-6 shadow-lg">💳</div>
+          <div class="text-terra font-bold text-xs tracking-widest uppercase mb-2">Step 02</div>
+          <h3 class="font-serif text-2xl font-bold text-forest-dark mb-3">Reserve Your Spot</h3>
+          <p class="text-bark/70 text-sm leading-relaxed">
+            A refundable $150 deposit holds your place. Pay the balance in monthly instalments or all at once — no fees either way.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-gold flex items-center justify-center text-3xl mx-auto mb-6 shadow-lg">🌿</div>
+          <div class="text-[#8a6400] font-bold text-xs tracking-widest uppercase mb-2">Step 03</div>
+          <h3 class="font-serif text-2xl font-bold text-forest-dark mb-3">Pack & Go</h3>
+          <p class="text-bark/70 text-sm leading-relaxed">
+            We handle flights, accommodation, transport, and food curation. You just show up, bring your appetite, and enjoy the ride.
+          </p>
         </div>
       </div>
-      <div class="flex justify-center">
-        <img
-          src="Gemini_Generated_Image_zd8na5zd8na5zd8n.png"
-          alt="Fibi Bar — a fiber-rich granola bar in a natural wrapper"
-          class="w-72 sm:w-80 lg:w-96 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ TESTIMONIALS -->
+  <section id="testimonials" class="py-24 bg-forest">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-forest-light font-semibold text-sm tracking-widest uppercase">Traveller Stories</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-cream mt-2">
+          Real people,<br/><em class="text-gold">real adventures</em>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-forest-dark/60 border border-forest-light/20 rounded-3xl p-8 card-lift">
+          <div class="flex gap-1 mb-4">
+            <span class="text-gold text-sm">★★★★★</span>
+          </div>
+          <p class="text-cream/80 text-sm leading-relaxed mb-6 italic">
+            "I'd been nervous about travelling as a vegan — would there be enough to eat? Bali with Wandering Roots completely changed that. Every single meal was an event. And I saved at least $600 vs booking solo."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-forest-light/30 flex items-center justify-center text-lg">🧡</div>
+            <div>
+              <p class="text-cream font-semibold text-sm">Priya M.</p>
+              <p class="text-cream/50 text-xs">London, UK · Bali trip</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-forest-dark/60 border border-forest-light/20 rounded-3xl p-8 card-lift">
+          <div class="flex gap-1 mb-4">
+            <span class="text-gold text-sm">★★★★★</span>
+          </div>
+          <p class="text-cream/80 text-sm leading-relaxed mb-6 italic">
+            "Kyoto in autumn with a group of fellow plant-based foodies? Absolute dream. Shojin ryori cooking class was the highlight of my year. Already signed up for Peru."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-forest-light/30 flex items-center justify-center text-lg">💚</div>
+            <div>
+              <p class="text-cream font-semibold text-sm">Tom R.</p>
+              <p class="text-cream/50 text-xs">Melbourne, AU · Japan trip</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-forest-dark/60 border border-forest-light/20 rounded-3xl p-8 card-lift">
+          <div class="flex gap-1 mb-4">
+            <span class="text-gold text-sm">★★★★★</span>
+          </div>
+          <p class="text-cream/80 text-sm leading-relaxed mb-6 italic">
+            "Morocco on a budget seemed impossible until I found this company. Sleeping under the Sahara stars, cooking tagines, making lifelong friends — all for under $700. Unbelievable."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-forest-light/30 flex items-center justify-center text-lg">🌙</div>
+            <div>
+              <p class="text-cream font-semibold text-sm">Camille D.</p>
+              <p class="text-cream/50 text-xs">Paris, FR · Morocco trip</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ PRICING INFO -->
+  <section class="py-24 bg-cream leaf-bg">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="text-forest font-semibold text-sm tracking-widest uppercase">What's Included</span>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold text-forest-dark mt-2 mb-6">
+        No hidden extras
+      </h2>
+      <p class="text-bark/70 text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
+        Every listed price covers the full experience. Here's what you always get:
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-12">
+        <div class="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-cream-dark">
+          <span class="text-forest text-xl mt-0.5">✓</span>
+          <div>
+            <p class="font-semibold text-forest-dark text-sm">All accommodation</p>
+            <p class="text-bark/60 text-xs">Eco-lodges, riads, guesthouses</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-cream-dark">
+          <span class="text-forest text-xl mt-0.5">✓</span>
+          <div>
+            <p class="font-semibold text-forest-dark text-sm">In-country transport</p>
+            <p class="text-bark/60 text-xs">Trains, buses, boats, transfers</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-cream-dark">
+          <span class="text-forest text-xl mt-0.5">✓</span>
+          <div>
+            <p class="font-semibold text-forest-dark text-sm">Most meals</p>
+            <p class="text-bark/60 text-xs">Breakfasts + curated group dinners</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-cream-dark">
+          <span class="text-forest text-xl mt-0.5">✓</span>
+          <div>
+            <p class="font-semibold text-forest-dark text-sm">All listed activities</p>
+            <p class="text-bark/60 text-xs">Cooking classes, farm visits, hikes</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-cream-dark">
+          <span class="text-forest text-xl mt-0.5">✓</span>
+          <div>
+            <p class="font-semibold text-forest-dark text-sm">Carbon offsetting</p>
+            <p class="text-bark/60 text-xs">Every trip is fully offset</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-cream-dark">
+          <span class="text-forest text-xl mt-0.5">✓</span>
+          <div>
+            <p class="font-semibold text-forest-dark text-sm">24/7 trip support</p>
+            <p class="text-bark/60 text-xs">Local guide + remote backup team</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-bark/50 text-sm">International flights not included — but we send personalised flight recommendations for every departure.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ NEWSLETTER / CTA -->
+  <section id="newsletter" class="py-24 bg-forest-dark relative overflow-hidden">
+    <!-- Background accent -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-forest/40 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-2xl mx-auto px-6 text-center">
+      <span class="text-3xl mb-4 block">🌱</span>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold text-cream mb-4">
+        Ready to explore?
+      </h2>
+      <p class="text-cream/70 text-lg mb-10 leading-relaxed">
+        Drop your email and we'll send you our full trip catalogue, early-bird discounts, and a free vegan packing guide.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="handleSignup(event)">
+        <input
+          type="email"
+          placeholder="your@email.com"
+          required
+          class="flex-1 px-5 py-3.5 rounded-full bg-forest/50 border border-forest-light/30 text-cream placeholder-cream/40 focus:outline-none focus:border-gold focus:bg-forest/70 transition-colors text-sm"
         />
-      </div>
+        <button
+          type="submit"
+          class="bg-gold text-bark font-semibold px-7 py-3.5 rounded-full hover:bg-gold-light transition-colors text-sm whitespace-nowrap">
+          Send Me Trips
+        </button>
+      </form>
+      <p id="signup-msg" class="mt-4 text-forest-light text-sm hidden">🎉 You're on the list! Check your inbox soon.</p>
+      <p class="text-cream/30 text-xs mt-5">No spam. Unsubscribe any time.</p>
     </div>
   </section>
 
-  <!-- Stat Band -->
-  <section class="bg-brand text-white py-12">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div>
-        <p class="font-serif text-3xl sm:text-4xl mb-1">12g</p>
-        <p class="text-sm text-white/70">Fiber per bar</p>
-      </div>
-      <div>
-        <p class="font-serif text-3xl sm:text-4xl mb-1">100%</p>
-        <p class="text-sm text-white/70">Plant-based</p>
-      </div>
-      <div>
-        <p class="font-serif text-3xl sm:text-4xl mb-1">5</p>
-        <p class="text-sm text-white/70">Simple ingredients</p>
-      </div>
-      <div>
-        <p class="font-serif text-3xl sm:text-4xl mb-1">0g</p>
-        <p class="text-sm text-white/70">Added sugar</p>
-      </div>
-    </div>
-  </section>
+  <!-- ═══════════════════════════════════════════ FOOTER ══════ -->
+  <footer class="bg-bark text-cream/70">
+    <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-  <!-- About -->
-  <section id="about" class="py-20 sm:py-28 bg-white">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <span class="inline-block bg-accent-light text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">About Fibi</span>
-      <h2 class="font-serif text-3xl sm:text-4xl text-dark mb-6">Fiber Shouldn't Be Complicated</h2>
-      <p class="text-muted text-lg leading-relaxed mb-6">
-        Most Americans get only half the fiber they need each day. We started Fibi Foods because we believe closing that gap shouldn't mean choking down a chalky supplement or decoding a 30-ingredient label.
-      </p>
-      <p class="text-muted text-lg leading-relaxed">
-        Every Fibi bar is built around a short list of whole, plant-based foods — oats, dates, nuts, seeds, and real fruit. That's it. We use chicory root fiber and psyllium husk to hit 12 grams per bar, so you get nearly half your daily value in one delicious snack. No protein isolates, no sugar alcohols, no mystery gums.
-      </p>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section id="products" class="py-20 sm:py-28 bg-warm">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="inline-block bg-brand/10 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Our Lineup</span>
-        <h2 class="font-serif text-3xl sm:text-4xl text-dark">Pick Your Flavor</h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Product 1 -->
-        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition group">
-          <div class="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mb-6 text-3xl">🍫</div>
-          <h3 class="font-serif text-xl mb-2">Cocoa Almond Crunch</h3>
-          <p class="text-muted text-sm leading-relaxed mb-4">Rich dark cocoa with roasted almonds and a hint of vanilla. Our bestseller — tastes like a brownie, works like fiber.</p>
-          <div class="flex items-center justify-between">
-            <span class="text-brand font-semibold">$2.99 / bar</span>
-            <span class="text-xs text-muted bg-gray-100 px-2 py-1 rounded-full">12g fiber</span>
-          </div>
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-2xl">🌿</span>
+          <span class="font-serif font-semibold text-xl text-cream">
+            Wandering<span class="text-gold">Roots</span>
+          </span>
         </div>
-
-        <!-- Product 2 -->
-        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition group">
-          <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 text-3xl">🍌</div>
-          <h3 class="font-serif text-xl mb-2">Banana Peanut Butter</h3>
-          <p class="text-muted text-sm leading-relaxed mb-4">Creamy peanut butter swirled with real banana and flax. Smooth, satisfying, and perfect for the afternoon slump.</p>
-          <div class="flex items-center justify-between">
-            <span class="text-brand font-semibold">$2.99 / bar</span>
-            <span class="text-xs text-muted bg-gray-100 px-2 py-1 rounded-full">12g fiber</span>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition group">
-          <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6 text-3xl">🍓</div>
-          <h3 class="font-serif text-xl mb-2">Strawberry Oat</h3>
-          <p class="text-muted text-sm leading-relaxed mb-4">Freeze-dried strawberries folded into buttery oats and chia seeds. Bright, fruity, and naturally pink.</p>
-          <div class="flex items-center justify-between">
-            <span class="text-brand font-semibold">$2.99 / bar</span>
-            <span class="text-xs text-muted bg-gray-100 px-2 py-1 rounded-full">12g fiber</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-12">
-        <a href="#shop" class="inline-block bg-brand text-white font-semibold px-8 py-3.5 rounded-full hover:bg-brand-dark transition">View All Products</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Fibi -->
-  <section id="why" class="py-20 sm:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="inline-block bg-accent-light text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">The Difference</span>
-        <h2 class="font-serif text-3xl sm:text-4xl text-dark">Why People Choose Fibi</h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-dark mb-2">High Fiber</h3>
-          <p class="text-sm text-muted leading-relaxed">12 grams of fiber from whole-food sources in every single bar — nearly half your daily value.</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-dark mb-2">Actually Delicious</h3>
-          <p class="text-sm text-muted leading-relaxed">Developed with a pastry chef. These taste like treats, not health food obligations.</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-dark mb-2">100% Plant-Based</h3>
-          <p class="text-sm text-muted leading-relaxed">Vegan, dairy-free, and made entirely from plants. Good for you, lighter on the planet.</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-          </div>
-          <h3 class="font-semibold text-dark mb-2">Clean Label</h3>
-          <p class="text-sm text-muted leading-relaxed">Five to seven ingredients, max. No gums, no sugar alcohols, nothing you can't find in a grocery store.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Story -->
-  <section id="story" class="py-20 sm:py-28 bg-accent-light">
-    <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="inline-block bg-white text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Our Story</span>
-        <h2 class="font-serif text-3xl sm:text-4xl text-dark mb-6">Born in a Kitchen, Built on a Mission</h2>
-        <p class="text-muted leading-relaxed mb-4">
-          Fibi started in 2023 when our founder — a nutritionist and lifelong snack skeptic — couldn't find a single fiber bar that didn't taste like cardboard or come loaded with ingredients she'd never recommend to a client.
+        <p class="text-sm leading-relaxed mb-5">
+          Affordable vegan group travel for curious, plant-based explorers. Established 2019.
         </p>
-        <p class="text-muted leading-relaxed mb-4">
-          So she made her own. The first batch sold out at a local farmers' market in under an hour. Neighbors started placing weekly orders. The rest, as they say, is fiber history.
-        </p>
-        <p class="text-muted leading-relaxed">
-          Today, Fibi Foods is still made in small batches with the same real-food philosophy: if it doesn't belong in your body, it doesn't belong in our bars.
-        </p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" class="hover:text-gold transition-colors" aria-label="Instagram">📷</a>
+          <a href="#" class="hover:text-gold transition-colors" aria-label="TikTok">🎵</a>
+          <a href="#" class="hover:text-gold transition-colors" aria-label="Facebook">👥</a>
+          <a href="#" class="hover:text-gold transition-colors" aria-label="YouTube">▶️</a>
+        </div>
       </div>
-      <div class="bg-white rounded-2xl p-10 shadow-sm">
-        <blockquote class="font-serif text-xl text-dark italic leading-relaxed mb-4">
-          "I wanted to make the bar I wished existed — something I'd actually look forward to eating, not just tolerate for the fiber."
-        </blockquote>
-        <p class="text-sm text-muted">— Ashwini, Founder of Fibi Foods</p>
+
+      <!-- Trips -->
+      <div>
+        <h4 class="text-cream font-semibold text-sm mb-4 uppercase tracking-widest">Destinations</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#trips" class="hover:text-gold transition-colors">Bali, Indonesia</a></li>
+          <li><a href="#trips" class="hover:text-gold transition-colors">Portugal</a></li>
+          <li><a href="#trips" class="hover:text-gold transition-colors">Japan</a></li>
+          <li><a href="#trips" class="hover:text-gold transition-colors">Peru</a></li>
+          <li><a href="#trips" class="hover:text-gold transition-colors">Morocco</a></li>
+          <li><a href="#trips" class="hover:text-gold transition-colors">Costa Rica</a></li>
+          <li><a href="#newsletter" class="hover:text-gold transition-colors">View all 38 →</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-cream font-semibold text-sm mb-4 uppercase tracking-widest">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#why-us"       class="hover:text-gold transition-colors">About Us</a></li>
+          <li><a href="#how-it-works" class="hover:text-gold transition-colors">How It Works</a></li>
+          <li><a href="#testimonials" class="hover:text-gold transition-colors">Travel Stories</a></li>
+          <li><a href="#"             class="hover:text-gold transition-colors">Sustainability</a></li>
+          <li><a href="#"             class="hover:text-gold transition-colors">Press</a></li>
+          <li><a href="#"             class="hover:text-gold transition-colors">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h4 class="text-cream font-semibold text-sm mb-4 uppercase tracking-widest">Support</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-gold transition-colors">FAQ</a></li>
+          <li><a href="#" class="hover:text-gold transition-colors">Booking Policy</a></li>
+          <li><a href="#" class="hover:text-gold transition-colors">Cancellations</a></li>
+          <li><a href="#" class="hover:text-gold transition-colors">Travel Insurance</a></li>
+          <li><a href="#" class="hover:text-gold transition-colors">Contact Us</a></li>
+        </ul>
+        <div class="mt-6 text-sm">
+          <p class="text-cream/50 text-xs">Questions?</p>
+          <a href="mailto:hello@wanderingroots.travel" class="text-gold hover:text-gold-light transition-colors text-xs">
+            hello@wanderingroots.travel
+          </a>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- CTA Band -->
-  <section id="shop" class="py-20 sm:py-28 bg-brand-dark text-white text-center">
-    <div class="max-w-2xl mx-auto px-6">
-      <h2 class="font-serif text-3xl sm:text-4xl mb-4">Ready to Try Fibi?</h2>
-      <p class="text-white/70 text-lg mb-8">Start with our Sampler Pack — three flavors, six bars, one happy gut. Free shipping on your first order.</p>
-      <a href="#" class="inline-block bg-white text-brand-dark font-semibold px-10 py-4 rounded-full hover:bg-accent-light transition shadow-lg">Order the Sampler — $14.99</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white/60 py-12">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        <!-- Col 1 -->
-        <div>
-          <p class="font-serif text-xl text-white mb-4">Fibi Foods</p>
-          <p class="text-sm leading-relaxed">High-fiber snack bars made from real, plant-based ingredients. Founded in 2023.</p>
-        </div>
-        <!-- Col 2 -->
-        <div>
-          <p class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Shop</p>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition">All Bars</a></li>
-            <li><a href="#" class="hover:text-white transition">Sampler Pack</a></li>
-            <li><a href="#" class="hover:text-white transition">Subscribe & Save</a></li>
-          </ul>
-        </div>
-        <!-- Col 3 -->
-        <div>
-          <p class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Company</p>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#about" class="hover:text-white transition">About Us</a></li>
-            <li><a href="#story" class="hover:text-white transition">Our Story</a></li>
-            <li><a href="#" class="hover:text-white transition">Nutrition Facts</a></li>
-          </ul>
-        </div>
-        <!-- Col 4 -->
-        <div>
-          <p class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Connect</p>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition">Instagram</a></li>
-            <li><a href="#" class="hover:text-white transition">TikTok</a></li>
-            <li><a href="mailto:hello@fibifoods.com" class="hover:text-white transition">hello@fibifoods.com</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs">&copy; 2024 Fibi Foods. All rights reserved.</p>
-        <div class="flex gap-6 text-xs">
-          <a href="#" class="hover:text-white transition">Privacy Policy</a>
-          <a href="#" class="hover:text-white transition">Terms of Service</a>
+    <div class="border-t border-cream/10">
+      <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/40">
+        <p>© 2026 Wandering Roots Travel Ltd. All rights reserved.</p>
+        <div class="flex gap-5">
+          <a href="#" class="hover:text-cream/70 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-cream/70 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-cream/70 transition-colors">Cookie Policy</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- ═══════════════════════════════════════════ SCRIPTS ═════ -->
+  <script>
+    // ── Navbar background on scroll ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('bg-forest-dark/95', 'backdrop-blur-md', 'shadow-lg');
+      } else {
+        navbar.classList.remove('bg-forest-dark/95', 'backdrop-blur-md', 'shadow-lg');
+      }
+    });
+
+    // ── Mobile menu toggle ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+
+    // ── Newsletter signup ──
+    function handleSignup(e) {
+      e.preventDefault();
+      document.getElementById('signup-msg').classList.remove('hidden');
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>
